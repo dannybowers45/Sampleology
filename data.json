@@ -1,0 +1,694 @@
+[
+    {
+        "sample": { "artist": "Luther Vandross", "title": "A House Is Not A Home" },
+        "sampled": { "artist": "Kanye West", "title": "Slow Jamz feat. Jamie Foxx" }
+    },
+    {
+        "sample": { "artist": "Chaka Khan", "title": "Through the Fire" },
+        "sampled": { "artist": "Kanye West", "title": "Through the Wire" }
+    },
+    {
+        "sample": { "artist": "Michael Jackson", "title": "P.Y.T. (Pretty Young Thing)" },
+        "sampled": { "artist": "Kanye West", "title": "Good Life feat. T-Pain" }
+    },
+    {
+        "sample": { "artist": "Daft Punk", "title": "Harder, Better, Faster, Stronger" },
+        "sampled": { "artist": "Kanye West", "title": "Stronger" }
+    },
+    {
+        "sample": { "artist": "Steely Dan", "title": "Kid Charlemagne" },
+        "sampled": { "artist": "Kanye West", "title": "Champion" }
+    },
+    {
+        "sample": { "artist": "Labi Siffre", "title": "My Song" },
+        "sampled": { "artist": "Kanye West", "title": "I Wonder" }
+    },
+    {
+        "sample": { "artist": "Eunice Collins", "title": "At the Hotel" },
+        "sampled": { "artist": "Kanye West", "title": "Bound 2" }
+    },
+    {
+        "sample": { "artist": "Ponderosa Twins Plus One", "title": "Bound" },
+        "sampled": { "artist": "Kanye West", "title": "Bound 2" }
+    },
+    {
+        "sample": { "artist": "Ray Charles", "title": "I Got a Woman" },
+        "sampled": { "artist": "Kanye West", "title": "Gold Digger feat. Jamie Foxx" }
+    },
+    {
+        "sample": { "artist": "Shirley Bassey", "title": "Diamonds Are Forever" },
+        "sampled": { "artist": "Kanye West", "title": "Diamonds From Sierra Leone" }
+    },
+    {
+        "sample": { "artist": "Otis Redding", "title": "Try a Little Tenderness" },
+        "sampled": { "artist": "Kanye West & Jay-Z", "title": "Otis" }
+    },
+    {
+        "sample": { "artist": "Eddie Harris", "title": "Am I Still the One" },
+        "sampled": { "artist": "Kanye West", "title": "Devil In A New Dress" }
+    },
+    {
+        "sample": { "artist": "Aphex Twin", "title": "Avril 14th" },
+        "sampled": { "artist": "Kanye West", "title": "Blame Game" }
+    },
+    {
+        "sample": { "artist": "Justice", "title": "Phantom" },
+        "sampled": { "artist": "Kanye West", "title": "I Wonder" }
+    },
+    {
+        "sample": { "artist": "Paula Abdul", "title": "Straight Up" },
+        "sampled": { "artist": "J. Cole", "title": "Work Out" }
+    },
+    {
+        "sample": { "artist": "Norman Connors", "title": "Love from the Sun" },
+        "sampled": { "artist": "J. Cole", "title": "Intro (KOD)" }
+    },
+    {
+        "sample": { "artist": "Ahmad Jamal", "title": "I'll Never Stop Loving You" },
+        "sampled": { "artist": "J. Cole", "title": "ATM" }
+    },
+    {
+        "sample": { "artist": "Roy Ayers", "title": "Running Away" },
+        "sampled": { "artist": "J. Cole", "title": "Motiv8" }
+    },
+    {
+        "sample": { "artist": "Monica", "title": "Why I Love You So Much" },
+        "sampled": { "artist": "J. Cole", "title": "Wet Dreamz" }
+    },
+    {
+        "sample": { "artist": "The Five Stairsteps", "title": "Danger! She's a Stranger" },
+        "sampled": { "artist": "J. Cole", "title": "Fire Squad" }
+    },
+    {
+        "sample": { "artist": "Jay-Z", "title": "Public Service Announcement" },
+        "sampled": { "artist": "J. Cole", "title": "A Tale of 2 Citiez" }
+    },
+    {
+        "sample": { "artist": "Donnie Hathaway", "title": "I Love the Lord" },
+        "sampled": { "artist": "J. Cole", "title": "Love Yourz" }
+    },
+    {
+        "sample": { "artist": "Richard Clayderman", "title": "Concerto Pour Une Jeune Fille Nommee Je T'Aime" },
+        "sampled": { "artist": "J. Cole", "title": "Apparently" }
+    },
+    {
+        "sample": { "artist": "Jodeci", "title": "Come Talk To Me" },
+        "sampled": { "artist": "J. Cole", "title": "Can't Get Enough" }
+    },
+    {
+        "sample": { "artist": "Whitney Houston", "title": "I Have Nothing" },
+        "sampled": { "artist": "Drake", "title": "Tuscan Leather" }
+    },
+    {
+        "sample": { "artist": "Wu-Tang Clan", "title": "It's Yourz" },
+        "sampled": { "artist": "Drake", "title": "Own It" }
+    },
+    {
+        "sample": { "artist": "Timmy Thomas", "title": "Why Can't We Live Together" },
+        "sampled": { "artist": "Drake", "title": "Hotline Bling" }
+    },
+    {
+        "sample": { "artist": "Lauryn Hill", "title": "Ex-Factor" },
+        "sampled": { "artist": "Drake", "title": "Nice for What" }
+    },
+    {
+        "sample": { "artist": "Brook Benton", "title": "You Were Gone" },
+        "sampled": { "artist": "Drake", "title": "Jimmy Cooks feat. 21 Savage" }
+    },
+    {
+        "sample": { "artist": "Ginuwine", "title": "So Anxious" },
+        "sampled": { "artist": "Drake", "title": "Legend" }
+    },
+    {
+        "sample": { "artist": "Jodeci", "title": "4 U" },
+        "sampled": { "artist": "Drake", "title": "Jodeci Freestyle" }
+    },
+    {
+        "sample": { "artist": "Malcolm McLaren", "title": "World's Famous" },
+        "sampled": { "artist": "Drake", "title": "Feel No Ways" }
+    },
+    {
+        "sample": { "artist": "Mary J. Blige", "title": "Mary's Joint" },
+        "sampled": { "artist": "Drake", "title": "Weston Road Flows" }
+    },
+    {
+        "sample": { "artist": "DJ Paleface", "title": "Do You Mind (Crazy Cousins Remix) feat. Kyla" },
+        "sampled": { "artist": "Drake", "title": "One Dance" }
+    },
+    {
+        "sample": { "artist": "Ray J", "title": "One Wish" },
+        "sampled": { "artist": "Drake", "title": "Redemption" }
+    },
+    {
+        "sample": { "artist": "Brandy", "title": "I Dedicate, Pt. 2" },
+        "sampled": { "artist": "Drake", "title": "Fire & Desire" }
+    },
+    {
+        "sample": { "artist": "Hiatus Kaiyote", "title": "Building a Ladder" },
+        "sampled": { "artist": "Drake", "title": "Free Smoke" }
+    },
+    {
+        "sample": { "artist": "The Soul Searchers", "title": "Ashley's Roachclip" },
+        "sampled": { "artist": "Drake", "title": "Take Care" }
+    },
+    {
+        "sample": { "artist": "X-Clan", "title": "Heed the Word of the Brother" },
+        "sampled": { "artist": "Drake", "title": "Worst Behavior" }
+    },
+    {
+        "sample": { "artist": "Busta Rhymes", "title": "Put Your Hands Where My Eyes Can See" },
+        "sampled": { "artist": "Drake", "title": "Headlines" }
+    },
+    {
+        "sample": { "artist": "Junior Mafia", "title": "Get Money" },
+        "sampled": { "artist": "Drake", "title": "Started From The Bottom" }
+    },
+    {
+        "sample": { "artist": "Donny Hathaway", "title": "Jealous Guy" },
+        "sampled": { "artist": "Drake", "title": "Practice" }
+    },
+    {
+        "sample": { "artist": "The Whatnauts", "title": "I'll Erase Away Your Pain" },
+        "sampled": { "artist": "Kanye West", "title": "Fade" }
+    },
+    {
+        "sample": { "artist": "The Temprees", "title": "If I Could Say What I Want To Say" },
+        "sampled": { "artist": "J. Cole", "title": "No Role Modelz" }
+    },
+    {
+        "sample": { "artist": "Hubert Laws", "title": "No More" },
+        "sampled": { "artist": "J. Cole", "title": "Power Trip" }
+    },
+    {
+        "sample": { "artist": "Sister Nancy", "title": "Bam Bam" },
+        "sampled": { "artist": "Kanye West", "title": "Famous" }
+    },
+    {
+        "sample": { "artist": "Willie Hutch", "title": "Mack Man" },
+        "sampled": { "artist": "Kanye West", "title": "The New Workout Plan" }
+    },
+    {
+        "sample": { "artist": "Fats Waller", "title": "The Minor Drag" },
+        "sampled": { "artist": "Kanye West", "title": "Good Morning" }
+    },
+    {
+        "sample": { "artist": "Edwin Birdsong", "title": "Cola Bottle Baby" },
+        "sampled": { "artist": "Kanye West", "title": "Stronger" }
+    },
+    {
+        "sample": { "artist": "Aretha Franklin", "title": "All the Way Live" },
+        "sampled": { "artist": "Kanye West", "title": "Last Call" }
+    },
+    {
+        "sample": { "artist": "Mavado feat. Serani", "title": "Dying" },
+        "sampled": { "artist": "Drake", "title": "9" }
+    },
+    {
+        "sample": { "artist": "The Dramatics", "title": "In the Rain" },
+        "sampled": { "artist": "J. Cole", "title": "Chaining Day" }
+    },
+    {
+        "sample": { "artist": "Beenie Man", "title": "Tear Off Mi Garment" },
+        "sampled": { "artist": "Drake", "title": "Controlla" }
+    },
+    {
+        "sample": { "artist": "Eddie Floyd", "title": "I've Never Found a Girl (To Love Me Like You Do)" },
+        "sampled": { "artist": "Kanye West", "title": "Runaway" }
+    },
+    {
+        "sample": { "artist": "Kashif", "title": "I Just Got to Have You (Lover Turn Me Loose)" },
+        "sampled": { "artist": "Drake", "title": "Hold On, We're Going Home" }
+    },
+    {
+        "sample": { "artist": "Marlena Shaw", "title": "Woman of the Ghetto" },
+        "sampled": { "artist": "Kanye West", "title": "My Beautiful Dark Twisted Fantasy (Title Track)" }
+    },
+    {
+        "sample": { "artist": "Interpol", "title": "Pioneer to the Falls" },
+        "sampled": { "artist": "Drake", "title": "Pound Cake / Paris Morton Music 2" }
+    },
+    {
+        "sample": { "artist": "The O'Jays", "title": "We're Still Together" },
+        "sampled": { "artist": "J. Cole", "title": "In the Morning" }
+    },
+    {
+        "sample": { "artist": "The Whatnauts", "title": "Message from a Black Man" },
+        "sampled": { "artist": "Kanye West", "title": "Never Let Me Down" }
+    },
+    {
+        "sample": { "artist": "Alicia Keys", "title": "You Don't Know My Name" },
+        "sampled": { "artist": "Kanye West", "title": "You Don't Know My Name (Remix)" }
+    },
+    {
+        "sample": { "artist": "Nina Simone", "title": "Strange Fruit" },
+        "sampled": { "artist": "Kanye West", "title": "Blood on the Leaves" }
+    },
+    {
+        "sample": { "artist": "Gino Vannelli", "title": "I Just Wanna Stop" },
+        "sampled": { "artist": "Drake", "title": "In My Feelings" }
+    },
+    {
+        "sample": { "artist": "The Emotions", "title": "Blind Alley" },
+        "sampled": { "artist": "Kanye West", "title": "Hey Mama" }
+    },
+    {
+        "sample": { "artist": "Sly and the Family Stone", "title": "You Can Make It If You Try" },
+        "sampled": { "artist": "Kanye West", "title": "Heard 'Em Say" }
+    },
+    {
+        "sample": { "artist": "Earth, Wind & Fire", "title": "Devotion" },
+        "sampled": { "artist": "J. Cole", "title": "Power Trip" }
+    },
+    {
+        "sample": { "artist": "The Delfonics", "title": "La La Means I Love You" },
+        "sampled": { "artist": "J. Cole", "title": "In the Morning" }
+    },
+    {
+        "sample": { "artist": "Hamilton, Joe Frank & Reynolds", "title": "Fallin' in Love" },
+        "sampled": { "artist": "Drake", "title": "Take Care" }
+    },
+    {
+        "sample": { "artist": "Aretha Franklin", "title": "Until I Found The Lord" },
+        "sampled": { "artist": "Drake", "title": "Unforgettable" }
+    },
+    {
+        "sample": { "artist": "Wu-Tang Clan", "title": "Tearz" },
+        "sampled": { "artist": "Kanye West", "title": "Gorgeous" }
+    },
+    {
+        "sample": { "artist": "The S.O.S Band", "title": "Borrowed Love" },
+        "sampled": { "artist": "J. Cole", "title": "A Tale of 2 Citiez" }
+    },
+    {
+        "sample": { "artist": "Cold Grits", "title": "It's Your Thing" },
+        "sampled": { "artist": "Kanye West", "title": "Fade" }
+    },
+    {
+        "sample": { "artist": "Etta James", "title": "Something's Got a Hold on Me" },
+        "sampled": { "artist": "Avicii", "title": "Levels" }
+    },
+    {
+        "sample": { "artist": "Stevie Wonder", "title": "All Day Sucker" },
+        "sampled": { "artist": "Kanye West", "title": "So Appalled" }
+    },
+    {
+        "sample": { "artist": "Minnie Riperton", "title": "Inside My Love" },
+        "sampled": { "artist": "J. Cole", "title": "Sparks Will Fly" }
+    },
+    {
+        "sample": { "artist": "The Isley Brothers", "title": "Between the Sheets" },
+        "sampled": { "artist": "Drake", "title": "Ignant Shit" }
+    },
+    {
+        "sample": { "artist": "Don Covay", "title": "Everything Gonna Be Alright" },
+        "sampled": { "artist": "J. Cole", "title": "The Workout" }
+    },
+    {
+        "sample": { "artist": "E.U.", "title": "Doin' the Butt" },
+        "sampled": { "artist": "J. Cole", "title": "G.O.M.D." }
+    },
+    {
+        "sample": { "artist": "Billy Joel", "title": "Moving Out (Anthony's Song)" },
+        "sampled": { "artist": "Drake", "title": "Say What's Real" }
+    },
+    {
+        "sample": { "artist": "Fela Kuti", "title": "Gentleman" },
+        "sampled": { "artist": "Kanye West", "title": "Power" }
+    },
+    {
+        "sample": { "artist": "O.V. Wright", "title": "A Nickel and a Nail" },
+        "sampled": { "artist": "J. Cole", "title": "Fire Squad" }
+    },
+    {
+        "sample": { "artist": "The Korgis", "title": "Everybody's Got to Learn Sometime" },
+        "sampled": { "artist": "Beck", "title": "Everybody's Got to Learn Sometime" }
+    },
+    {
+        "sample": { "artist": "The Delfonics", "title": "Ready or Not Here I Come" },
+        "sampled": { "artist": "The Fugees", "title": "Ready or Not" }
+    },
+    {
+        "sample": { "artist": "Bob James", "title": "Nautilus" },
+        "sampled": { "artist": "A Tribe Called Quest", "title": "Clap Your Hands" }
+    },
+    {
+        "sample": { "artist": "Ike and Tina Turner", "title": "Cussin', Cryin' and Carryin' On" },
+        "sampled": { "artist": "Salt-N-Pepa", "title": "Push It" }
+    },
+    {
+        "sample": { "artist": "Curtis Mayfield", "title": "(Don't Worry) If There's a Hell Below, We're All Going to Go" },
+        "sampled": { "artist": "Kanye West", "title": "Jesus Walks" }
+    },
+    {
+        "sample": { "artist": "Aretha Franklin", "title": "Spirit in the Dark" },
+        "sampled": { "artist": "Kanye West", "title": "School Spirit" }
+    },
+    {
+        "sample": { "artist": "Mandrill", "title": "Peace and Love (Amani Na Mapenzi): Movement IV" },
+        "sampled": { "artist": "Kanye West", "title": "Two Words" }
+    },
+    {
+        "sample": { "artist": "Bill Withers", "title": "Just Out of Reach" },
+        "sampled": { "artist": "Kanye West", "title": "Drive Slow" }
+    },
+    {
+        "sample": { "artist": "Gil Scott-Heron", "title": "Comment #1" },
+        "sampled": { "artist": "Kanye West", "title": "Who Will Survive in America" }
+    },
+    {
+        "sample": { "artist": "The Dells", "title": "Fonky Thang, Diamon Rang" },
+        "sampled": { "artist": "Kanye West", "title": "Family Business" }
+    },
+    {
+        "sample": { "artist": "Erykah Badu", "title": "Didn't Cha Know?" },
+        "sampled": { "artist": "J. Cole", "title": "Too Deep for the Intro" }
+    },
+    {
+        "sample": { "artist": "Dexter Wansel", "title": "Theme From the Planets" },
+        "sampled": { "artist": "J. Cole", "title": "Lights Please" }
+    },
+    {
+        "sample": { "artist": "The Supremes", "title": "My World Is Empty Without You" },
+        "sampled": { "artist": "J. Cole", "title": "World Is Empty" }
+    },
+    {
+        "sample": { "artist": "Hank Crawford", "title": "Wildflower" },
+        "sampled": { "artist": "J. Cole ft. Brandon Hines", "title": "Dreams" }
+    },
+    {
+        "sample": { "artist": "Billy Stewart", "title": "Cross My Heart" },
+        "sampled": { "artist": "J. Cole", "title": "Get Away" }
+    },
+    {
+        "sample": { "artist": "Lee Fields & The Expressions", "title": "Ladies" },
+        "sampled": { "artist": "J. Cole", "title": "Ladies" }
+    },
+    {
+        "sample": { "artist": "Sara Tavares", "title": "Balance" },
+        "sampled": { "artist": "J. Cole", "title": "Losing My Balance" }
+    },
+    {
+        "sample": { "artist": "Janelle Mon\u00e1e", "title": "Neon Valley Street" },
+        "sampled": { "artist": "J. Cole ft. Wale", "title": "You Got It" }
+    },
+    {
+        "sample": { "artist": "Focus", "title": "Hocus Pocus" },
+        "sampled": { "artist": "J. Cole", "title": "Blow Up" }
+    },
+    {
+        "sample": { "artist": "The Class-Set", "title": "Julie" },
+        "sampled": { "artist": "J. Cole", "title": "The Autograph" }
+    },
+    {
+        "sample": { "artist": "Billie Holiday", "title": "My Man" },
+        "sampled": { "artist": "J. Cole", "title": "Cost Me a Lot" }
+    },
+    {
+        "sample": { "artist": "Stevie Wonder", "title": "My Cherie Amour" },
+        "sampled": { "artist": "J. Cole", "title": "Love Me Not" }
+    },
+    {
+        "sample": { "artist": "OutKast", "title": "So Fresh, So Clean" },
+        "sampled": { "artist": "J. Cole", "title": "Farewell" }
+    },
+    {
+        "sample": { "artist": "Kenny Burrell", "title": "All Mine (Minha)" },
+        "sampled": { "artist": "J. Cole", "title": "Photograph" }
+    },
+    {
+        "sample": { "artist": "Bill Withers", "title": "Kissing My Love" },
+        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "The Cut Off" }
+    },
+    {
+        "sample": { "artist": "Takehiro Honda", "title": "Dark & Mellow" },
+        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "The Cut Off" }
+    },
+    {
+        "sample": { "artist": "The Winans", "title": "The Question" },
+        "sampled": { "artist": "J. Cole", "title": "Foldin Clothes" }
+    },
+    {
+        "sample": { "artist": "Marlena Shaw", "title": "California Soul" },
+        "sampled": { "artist": "J. Cole", "title": "Ville Mentality" }
+    },
+    {
+        "sample": { "artist": "Marvin Gaye", "title": "All the Way Round" },
+        "sampled": { "artist": "Drake", "title": "8 out of 10" }
+    },
+    {
+        "sample": { "artist": "Ideal", "title": "Get Gone" },
+        "sampled": { "artist": "Drake", "title": "Faithful" }
+    },
+    {
+        "sample": { "artist": "SWV (Sisters With Voices)", "title": "Anything" },
+        "sampled": { "artist": "Drake", "title": "Shot for Me" }
+    },
+    {
+        "sample": { "artist": "Mariah Carey", "title": "Emotions (club remix)" },
+        "sampled": { "artist": "Drake", "title": "Emotionless" }
+    },
+    {
+        "sample": { "artist": "DMX", "title": "What These Bitches Want" },
+        "sampled": { "artist": "Drake", "title": "U With Me?" }
+    },
+    {
+        "sample": { "artist": "DMX", "title": "How's It Goin' Down" },
+        "sampled": { "artist": "Drake", "title": "U With Me?" }
+    },
+    {
+        "sample": { "artist": "Aaliyah featuring R. Kelly", "title": "At Your Best (You Are Love)" },
+        "sampled": { "artist": "Drake", "title": "Unforgettable" }
+    },
+    {
+        "sample": { "artist": "Juvenile", "title": "Back That Azz Up" },
+        "sampled": { "artist": "Drake", "title": "Practice" }
+    },
+    {
+        "sample": { "artist": "The Winans", "title": "The Question" },
+        "sampled": { "artist": "Drake", "title": "Views" }
+    },
+    {
+        "sample": { "artist": "Witch", "title": "Introduction" },
+        "sampled": { "artist": "Drake", "title": "Gord's Room" }
+    },
+    {
+        "sample": { "artist": "Sade", "title": "Closer" },
+        "sampled": { "artist": "Drake", "title": "Why Even Try" }
+    },
+    {
+        "sample": { "artist": "Jai Paul", "title": "BTSTU (Demo)" },
+        "sampled": { "artist": "Drake", "title": "Dreams Money Can Buy" }
+    },
+    {
+        "sample": { "artist": "Joe Pass", "title": "A Time for Us" },
+        "sampled": { "artist": "Drake", "title": "Look What You've Done" }
+    },
+    {
+        "sample": { "artist": "Wu-Tang Clan", "title": "C.R.E.A.M." },
+        "sampled": { "artist": "Drake", "title": "Can I" }
+    },
+    {
+        "sample": { "artist": "9th Wonder", "title": "The Last Time" },
+        "sampled": { "artist": "Drake", "title": "The Resistance" }
+    },
+    {
+        "sample": { "artist": "Jon B.", "title": "Calling on You" },
+        "sampled": { "artist": "Drake", "title": "Cameras / Good Ones Go Interlude" }
+    },
+    {
+        "sample": { "artist": "Wally Wilder", "title": "Don't Tell a Lie About Me" },
+        "sampled": { "artist": "Kanye West", "title": "Crack Music" }
+    },
+    {
+        "sample": { "artist": "George Duke", "title": "I Love You More" },
+        "sampled": { "artist": "J. Cole", "title": "03' Adolescence" }
+    },
+    {
+        "sample": { "artist": "The Dramatics", "title": "Toast to the Fool" },
+        "sampled": { "artist": "Kanye West", "title": "Two Words" }
+    },
+    {
+        "sample": { "artist": "Common", "title": "The Light" },
+        "sampled": { "artist": "J. Cole", "title": "Return of the King" }
+    },
+    {
+        "sample": { "artist": "Ideal", "title": "Get Gone" },
+        "sampled": { "artist": "Drake", "title": "9" }
+    },
+    {
+        "sample": { "artist": "Baby Washington", "title": "This Time" },
+        "sampled": { "artist": "Kanye West", "title": "Last Call" }
+    },
+    {
+        "sample": { "artist": "The Turtles", "title": "You Showed Me" },
+        "sampled": { "artist": "J. Cole", "title": "Before I'm Gone" }
+    },
+    {
+        "sample": { "artist": "The Dramatics", "title": "I Dedicate My Life to You" },
+        "sampled": { "artist": "Kanye West", "title": "Family Business" }
+    },
+    {
+        "sample": { "artist": "The Temptations", "title": "I Wish It Would Rain" },
+        "sampled": { "artist": "J. Cole", "title": "Intro" }
+    },
+    {
+        "sample": { "artist": "Dennis Coffey", "title": "Ride Sally Ride" },
+        "sampled": { "artist": "Kanye West", "title": "Last Call" }
+    },
+    {
+        "sample": { "artist": "The Stylistics", "title": "You Are Everything" },
+        "sampled": { "artist": "J. Cole", "title": "Rise and Shine" }
+    },
+    {
+        "sample": { "artist": "The Doors", "title": "Five to One" },
+        "sampled": { "artist": "Kanye West", "title": "The New Workout Plan" }
+    },
+    {
+        "sample": { "artist": "Kool & The Gang", "title": "N.T." },
+        "sampled": { "artist": "Drake", "title": "Know Yourself" }
+    },
+    {
+        "sample": { "artist": "Gino Washington", "title": "Gino Is a Coward" },
+        "sampled": { "artist": "J. Cole", "title": "January 28th" }
+    },
+    {
+        "sample": { "artist": "Micha\u0142 Urbaniak", "title": "The End of Summer" },
+        "sampled": { "artist": "J. Cole", "title": "Once an Addict (Interlude)" }
+    },
+    {
+        "sample": { "artist": "John Dankworth", "title": "Wife" },
+        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "Friends" }
+    },
+    {
+        "sample": { "artist": "The Impressions", "title": "We're a Winner" },
+        "sampled": { "artist": "Kanye West feat. Common", "title": "Southside" }
+    },
+    {
+        "sample": { "artist": "The Undisputed Truth", "title": "Gonna Fly Now" },
+        "sampled": { "artist": "Kanye West", "title": "Good Morning" }
+    },
+    {
+        "sample": { "artist": "Mtume", "title": "Juicy Fruit" },
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Juicy" }
+    },
+    {
+        "sample": { "artist": "Diana Ross", "title": "I'm Coming Out" },
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Mo Money Mo Problems" }
+    },
+    {
+        "sample": { "artist": "The Isley Brothers", "title": "Between the Sheets" },
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Big Poppa" }
+    },
+    {
+        "sample": { "artist": "Bobby Caldwell", "title": "What You Won't Do for Love" },
+        "sampled": { "artist": "2Pac", "title": "Do for Love" }
+    },
+    {
+        "sample": { "artist": "Roger Troutman", "title": "So Ruff, So Tuff" },
+        "sampled": { "artist": "2Pac", "title": "California Love" }
+    },
+    {
+        "sample": { "artist": "DeBarge", "title": "A Dream" },
+        "sampled": { "artist": "2Pac", "title": "I Ain't Mad at Cha" }
+    },
+    {
+        "sample": { "artist": "James Brown", "title": "Funky Drummer" },
+        "sampled": { "artist": "Public Enemy", "title": "Fight the Power" }
+    },
+    {
+        "sample": { "artist": "Led Zeppelin", "title": "When the Levee Breaks" },
+        "sampled": { "artist": "Beastie Boys", "title": "Rhymin & Stealin" }
+    },
+    {
+        "sample": { "artist": "The Isley Brothers", "title": "That Lady" },
+        "sampled": { "artist": "Kendrick Lamar", "title": "i" }
+    },
+    {
+        "sample": { "artist": "James Brown", "title": "The Payback" },
+        "sampled": { "artist": "Kendrick Lamar", "title": "King Kunta" }
+    },
+    {
+        "sample": { "artist": "Janet Jackson", "title": "Any Time, Any Place" },
+        "sampled": { "artist": "Kendrick Lamar", "title": "Poetic Justice" }
+    },
+    {
+        "sample": { "artist": "Beach House", "title": "Silver Soul" },
+        "sampled": { "artist": "Kendrick Lamar", "title": "Money Trees" }
+    },
+    {
+        "sample": { "artist": "Lou Reed", "title": "Walk on the Wild Side" },
+        "sampled": { "artist": "A Tribe Called Quest", "title": "Can I Kick It?" }
+    },
+    {
+        "sample": { "artist": "Lyn Collins", "title": "Think (About It)" },
+        "sampled": { "artist": "Rob Base & DJ E-Z Rock", "title": "It Takes Two" }
+    },
+    {
+        "sample": { "artist": "Rick James", "title": "Super Freak" },
+        "sampled": { "artist": "MC Hammer", "title": "U Can't Touch This" }
+    },
+    {
+        "sample": { "artist": "Ahmad Jamal", "title": "Swahililand" },
+        "sampled": { "artist": "Nas", "title": "The World Is Yours" }
+    },
+    {
+        "sample": { "artist": "Michael Jackson", "title": "Human Nature" },
+        "sampled": { "artist": "Nas", "title": "It Ain't Hard to Tell" }
+    },
+    {
+        "sample": { "artist": "The Incredible Bongo Band", "title": "Apache" },
+        "sampled": { "artist": "Nas", "title": "Made You Look" }
+    },
+    {
+        "sample": { "artist": "Willie Hutch", "title": "I Choose You" },
+        "sampled": { "artist": "UGK feat. OutKast", "title": "Int'l Players Anthem" }
+    },
+    {
+        "sample": { "artist": "Isaac Hayes", "title": "Hyperbolicsyllabicsesquedalymistic" },
+        "sampled": { "artist": "Public Enemy", "title": "Black Steel in the Hour of Chaos" }
+    },
+    {
+        "sample": { "artist": "Herbie Hancock", "title": "Watermelon Man" },
+        "sampled": { "artist": "Us3", "title": "Cantaloop (Flip Fantasia)" }
+    },
+    {
+        "sample": { "artist": "Bob James", "title": "Take Me to the Mardi Gras" },
+        "sampled": { "artist": "Run-DMC", "title": "Peter Piper" }
+    },
+    {
+        "sample": { "artist": "Tom Tom Club", "title": "Genius of Love" },
+        "sampled": { "artist": "Mariah Carey", "title": "Fantasy" }
+    },
+    {
+        "sample": { "artist": "Slick Rick", "title": "Children's Story" },
+        "sampled": { "artist": "Snoop Dogg", "title": "Lodi Dodi" }
+    },
+    {
+        "sample": { "artist": "Schoolly D", "title": "P.S.K. What Does It Mean?" },
+        "sampled": { "artist": "Ice-T", "title": "6 'N the Mornin'" }
+    },
+    {
+        "sample": { "artist": "Parliament", "title": "Give Up the Funk" },
+        "sampled": { "artist": "Digital Underground", "title": "The Humpty Dance" }
+    },
+    {
+        "sample": { "artist": "Kool & The Gang", "title": "Summer Madness" },
+        "sampled": { "artist": "DJ Jazzy Jeff & The Fresh Prince", "title": "Summertime" }
+    },
+    {
+        "sample": { "artist": "Stevie Wonder", "title": "Pastime Paradise" },
+        "sampled": { "artist": "Coolio", "title": "Gangsta's Paradise" }
+    },
+    {
+        "sample": { "artist": "Grandmaster Flash and the Furious Five", "title": "The Message" },
+        "sampled": { "artist": "Diddy", "title": "Can't Nobody Hold Me Down" }
+    },
+    {
+        "sample": { "artist": "Curtis Mayfield", "title": "Pusherman" },
+        "sampled": { "artist": "Ice Cube", "title": "Pushin' Weight" }
+    },
+    {
+        "sample": { "artist": "Average White Band", "title": "School Boy Crush" },
+        "sampled": { "artist": "Missy Elliott", "title": "Sock It 2 Me" }
+    }
+]

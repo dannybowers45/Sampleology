@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace's Sample Hunter</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #080d15;
+            --bg-dark-alt: #111927;
+            --card: rgba(16, 22, 32, 0.92);
+            --accent: #f6d860;
+            --accent-strong: #f2b93c;
+            --accent-soft: rgba(246, 216, 96, 0.18);
+            --text-primary: #f8fafc;
+            --text-muted: #a9b6cf;
+            --green: #6ee6aa;
+            --red: #ff6060;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 0% 0%, rgba(246, 216, 96, 0.08), transparent 55%),
+                        radial-gradient(circle at 100% 100%, rgba(235, 189, 92, 0.1), transparent 50%),
+                        linear-gradient(180deg, #050910 0%, #0d1420 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .game-container {
+            max-width: 560px;
+            width: 100%;
+            background: linear-gradient(155deg, rgba(14, 20, 30, 0.9) 0%, rgba(11, 16, 24, 0.96) 100%);
+            border: 1px solid var(--accent-soft);
+            border-radius: 26px;
+            box-shadow: 0 30px 60px rgba(4, 6, 10, 0.65);
+            backdrop-filter: blur(18px);
+        }
+
+        .headline {
+            color: var(--accent);
+            letter-spacing: 0.03em;
+            text-shadow: 0 10px 25px rgba(246, 216, 96, 0.25);
+        }
+
+        .tagline { color: var(--text-muted); }
+
+        .panel {
+            background: rgba(15, 22, 33, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 22px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.015);
+        }
+
+        .sample-panel {
+            border-left: 4px solid var(--accent);
+            background: linear-gradient(160deg, rgba(18, 25, 37, 0.95) 0%, rgba(13, 20, 31, 0.85) 100%);
+        }
+
+        .panel-title {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+        }
+
+        /* Artwork */
+        .artwork-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 2px solid rgba(246, 216, 96, 0.3);
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .artwork-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .artwork-placeholder {
+            color: var(--text-muted);
+            font-size: 2rem;
+        }
+
+        /* Buttons */
+        .accent-button {
+            background: linear-gradient(135deg, var(--accent-strong) 0%, var(--accent) 100%);
+            color: #1b1404;
+            font-weight: 700;
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 12px 30px rgba(246, 216, 96, 0.35);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            cursor: pointer;
+        }
+        .accent-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 36px rgba(246, 216, 96, 0.4);
+        }
+        .accent-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: var(--accent);
+            font-weight: 600;
+            border-radius: 16px;
+            border: 1px solid rgba(246, 216, 96, 0.45);
+            box-shadow: 0 10px 24px rgba(246, 216, 96, 0.18);
+            transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+            cursor: pointer;
+        }
+        .secondary-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            background: rgba(246, 216, 96, 0.12);
+            box-shadow: 0 16px 28px rgba(246, 216, 96, 0.22);
+        }
+        .secondary-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .ghost-button {
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: background 0.15s ease, color 0.15s ease;
+            cursor: pointer;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+        }
+        .ghost-button:hover:not(:disabled) {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-primary);
+        }
+        .ghost-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        label {
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .input-field {
+            background: rgba(15, 21, 31, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 14px;
+            color: var(--text-primary);
+            width: 100%;
+            transition: border 0.2s ease, box-shadow 0.2s ease;
+            font-size: 1rem;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: rgba(246, 216, 96, 0.5);
+            box-shadow: 0 0 0 4px rgba(246, 216, 96, 0.12);
+        }
+        .input-field::placeholder { color: rgba(255, 255, 255, 0.35); }
+        .input-field:disabled { opacity: 0.5; }
+
+        /* Timer */
+        #timer-bar {
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            border-radius: 999px;
+            border: 1px solid rgba(246, 216, 96, 0.15);
+        }
+        #progress-fill {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(246, 216, 96, 0.25), var(--accent));
+            transition: width 0.1s linear;
+            box-shadow: 0 2px 8px rgba(246, 216, 96, 0.25);
+        }
+        #progress-fill.urgent {
+            background: linear-gradient(90deg, rgba(255, 96, 96, 0.4), var(--red));
+        }
+
+        /* Stats */
+        .status-panel {
+            background: rgba(11, 17, 28, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+        .stat-chip {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 14px;
+            border: 1px solid rgba(246, 216, 96, 0.14);
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .stat-value {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Status message */
+        .status-message {
+            min-height: 54px;
+            padding: 16px;
+            background: linear-gradient(145deg, rgba(246, 216, 96, 0.1), rgba(16, 23, 35, 0.95));
+            border-radius: 16px;
+            border: 1px solid rgba(246, 216, 96, 0.2);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, background 0.3s ease, border 0.3s ease;
+        }
+        .status-message.correct {
+            border-color: rgba(110, 230, 170, 0.7);
+            background: linear-gradient(145deg, rgba(22, 38, 30, 0.9), rgba(15, 25, 20, 0.95));
+        }
+        .status-message.incorrect {
+            border-color: rgba(255, 96, 96, 0.7);
+            background: linear-gradient(145deg, rgba(45, 18, 26, 0.92), rgba(22, 12, 18, 0.92));
+        }
+        .status-message.status-info {
+            border-color: rgba(158, 191, 255, 0.4);
+        }
+        .status-message.status-neutral {
+            border-color: var(--accent-soft);
+        }
+
+        /* Setup screen */
+        .setup-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .option-group-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .option-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .option-chip {
+            padding: 8px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.03);
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.15s ease;
+        }
+        .option-chip:hover { background: rgba(246, 216, 96, 0.08); color: var(--text-primary); }
+        .option-chip.selected {
+            background: rgba(246, 216, 96, 0.15);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shakeX {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-6px); }
+            40%, 80% { transform: translateX(6px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        @keyframes confettiBurst {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.5); }
+        }
+        .anim-fade-in { animation: fadeIn 0.35s ease-out; }
+        .anim-shake { animation: shakeX 0.4s ease-in-out; }
+        .anim-pulse { animation: pulse 0.4s ease-in-out; }
+
+        /* Modal overlay */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 6, 10, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            padding: 24px;
+        }
+        .modal-content {
+            max-width: 480px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            background: linear-gradient(155deg, rgba(14, 20, 30, 0.98) 0%, rgba(11, 16, 24, 0.99) 100%);
+            border: 1px solid var(--accent-soft);
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 0 30px 60px rgba(4, 6, 10, 0.8);
+        }
+
+        /* Leaderboard */
+        .lb-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .lb-row:nth-child(1) { border-color: rgba(246, 216, 96, 0.3); }
+        .lb-rank { font-weight: 700; color: var(--accent); min-width: 28px; }
+        .lb-name { flex: 1; margin-left: 10px; color: var(--text-primary); }
+        .lb-score { font-weight: 700; color: var(--accent); }
+        .lb-details { font-size: 0.75rem; color: var(--text-muted); margin-left: 10px; }
+
+        /* Missed answers list */
+        .missed-list {
+            max-height: 200px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .missed-item {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 6px 10px;
+            background: rgba(255,96,96,0.05);
+            border-radius: 8px;
+            border-left: 3px solid rgba(255,96,96,0.3);
+        }
+
+        /* Screens visibility */
+        .screen { display: none; }
+        .screen.active { display: block; }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .game-container { padding: 24px 20px; }
+            .stat-grid { gap: 8px; }
+            .artwork-container { width: 64px; height: 64px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container rounded-3xl p-6 md:p-8 space-y-6">
+        <h1 class="headline text-3xl font-black text-center mb-1">Grace's Sample Hunter</h1>
+        <p class="tagline text-center text-sm mb-4">Guess the song that sampled the track you hear!</p>
+
+        <!-- SETUP SCREEN -->
+        <div id="setup-screen" class="screen active space-y-5">
+            <div class="setup-section">
+                <p class="option-group-label">Artist Filter</p>
+                <div class="option-grid" id="artist-filter">
+                    <button class="option-chip selected" data-filter="all">All</button>
+                    <button class="option-chip" data-filter="kanye">Kanye West</button>
+                    <button class="option-chip" data-filter="cole">J. Cole</button>
+                    <button class="option-chip" data-filter="drake">Drake</button>
+                    <button class="option-chip" data-filter="other">Other Artists</button>
+                </div>
+            </div>
+            <div class="setup-section">
+                <p class="option-group-label">Difficulty</p>
+                <div class="option-grid" id="difficulty-select">
+                    <button class="option-chip" data-difficulty="easy">Easy (45s)</button>
+                    <button class="option-chip selected" data-difficulty="normal">Normal (30s)</button>
+                    <button class="option-chip" data-difficulty="hard">Hard (15s)</button>
+                </div>
+            </div>
+            <button id="start-game-button" class="accent-button w-full flex justify-center items-center gap-2 py-3 px-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.26a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>START GAME</span>
+            </button>
+            <button id="show-leaderboard-btn" class="ghost-button w-full">View Leaderboard</button>
+        </div>
+
+        <!-- GAME SCREEN -->
+        <div id="game-screen" class="screen space-y-5">
+
+            <div class="panel sample-panel p-5 sm:p-6">
+                <p class="panel-title mb-3">Original Sample</p>
+                <div class="flex items-start gap-4">
+                    <div class="artwork-container" id="artwork-container">
+                        <span class="artwork-placeholder">&#9835;</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div id="play-info" class="text-base font-mono text-slate-200">Loading...</div>
+                        <div class="flex items-center gap-3 mt-3">
+                            <button id="play-button"
+                                class="accent-button flex justify-center items-center gap-2 py-2.5 px-5 text-sm transition duration-150 ease-in-out"
+                                disabled>
+                                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path id="play-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.26a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span id="button-text">PLAYING...</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="timer-bar" class="mb-4">
+                <div id="progress-fill" style="width: 100%; transition: none;"></div>
+            </div>
+
+            <div class="mb-4">
+                <label for="guess-input" class="block text-sm font-medium mb-2">Your Guess (Song Title or Artist):</label>
+                <input type="text" id="guess-input" placeholder="e.g., California Love or Dr. Dre" class="input-field" disabled autocomplete="off">
+            </div>
+            <div class="flex gap-3">
+                <button id="submit-button" class="secondary-button flex-1 py-3 px-6" disabled>SUBMIT GUESS</button>
+                <button id="hint-button" class="ghost-button py-3 px-4" disabled>Hint</button>
+                <button id="skip-button" class="ghost-button py-3 px-4" disabled>Skip</button>
+            </div>
+
+            <div class="status-panel panel mt-4 p-5 space-y-4">
+                <div class="stat-grid">
+                    <div class="stat-chip">
+                        <span class="stat-label">Score</span>
+                        <span id="current-score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-chip">
+                        <span class="stat-label">Round</span>
+                        <span id="current-round" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-chip">
+                        <span class="stat-label">Streak</span>
+                        <span id="current-streak" class="stat-value">0</span>
+                    </div>
+                </div>
+                <div id="message-box" class="status-message status-neutral">
+                    Loading game...
+                </div>
+            </div>
+        </div>
+
+        <!-- END GAME SCREEN (rendered by JS as modal) -->
+    </div>
+
+    <!-- MODAL CONTAINER -->
+    <div id="modal-container"></div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
