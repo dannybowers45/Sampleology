@@ -6,18 +6,12 @@ const PLAY_ICON = 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.26a1 1 0 001.55
 const PAUSE_ICON = 'M6 5h4V19H6zm8 0h4v14h-4z';
 
 const DIFFICULTY = {
-    easy:   { time: 45, matchMode: 'both', label: 'Easy' },
-    normal: { time: 30, matchMode: 'both', label: 'Normal' },
-    hard:   { time: 15, matchMode: 'title', label: 'Hard' }
+    easy:   { time: 30, matchMode: 'both', label: 'Easy' },
+    normal: { time: 20, matchMode: 'both', label: 'Normal' },
+    hard:   { time: 10, matchMode: 'title', label: 'Hard' }
 };
 
-const ARTIST_FILTERS = {
-    all:   () => true,
-    kanye: (s) => /kanye/i.test(s.sampled.artist),
-    cole:  (s) => /j\.?\s*cole/i.test(s.sampled.artist),
-    drake: (s) => /drake/i.test(s.sampled.artist),
-    other: (s) => !/kanye/i.test(s.sampled.artist) && !/j\.?\s*cole/i.test(s.sampled.artist) && !/drake/i.test(s.sampled.artist)
-};
+const ROUNDS_PER_GAME = 5;
 
 // ─── State ────────────────────────────────────────────────────
 let score = 0;
@@ -33,7 +27,7 @@ let hintsUsed = 0;
 let hintLevel = 0;
 let missedAnswers = [];
 let availableSongs = [];
-let selectedFilter = 'all';
+let playerName = '';
 let selectedDifficulty = 'normal';
 let guessTimerSeconds = 30;
 let roundActive = false;
@@ -43,7 +37,7 @@ const EL = {
     setupScreen:      document.getElementById('setup-screen'),
     gameScreen:       document.getElementById('game-screen'),
     modalContainer:   document.getElementById('modal-container'),
-    artistFilter:     document.getElementById('artist-filter'),
+    playerNameInput:  document.getElementById('player-name-input'),
     difficultySelect: document.getElementById('difficulty-select'),
     startGameButton:  document.getElementById('start-game-button'),
     showLeaderboard:  document.getElementById('show-leaderboard-btn'),
@@ -107,6 +101,29 @@ function fuzzyMatch(guess, target) {
     return false;
 }
 
+function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+// ─── Failed Song Logging ──────────────────────────────────
+function logFailedSong(track, reason) {
+    try {
+        const log = JSON.parse(localStorage.getItem('sampleologyFailedSongs') || '[]');
+        log.push({
+            artist: track.artist,
+            title: track.title,
+            reason,
+            timestamp: new Date().toISOString()
+        });
+        localStorage.setItem('sampleologyFailedSongs', JSON.stringify(log));
+    } catch (e) { /* localStorage full or unavailable */ }
+}
+
 // ─── iTunes API ───────────────────────────────────────────────
 async function fetchAudioSrc(track) {
     if (DEBUG) console.log(`[ITUNES API] Looking up: ${track.artist} - ${track.title}`);
@@ -126,6 +143,7 @@ async function fetchAudioSrc(track) {
         return { previewUrl: result.previewUrl || null, artworkUrl };
     } catch (err) {
         if (DEBUG) console.log('Error fetching data:', err);
+        logFailedSong(track, err.message || 'fetch_error');
         return { previewUrl: null, artworkUrl: null };
     }
 }
@@ -266,7 +284,7 @@ async function startRound() {
     resetControls();
     hintLevel = 0;
     round++;
-    EL.round.textContent = round;
+    EL.round.textContent = `${round}/${totalRounds}`;
 
     if (availableSongs.length === 0) {
         showEndGameModal();
@@ -286,6 +304,7 @@ async function startRound() {
     const { previewUrl, artworkUrl } = await fetchAudioSrc(originalSample);
 
     if (!previewUrl) {
+        logFailedSong(originalSample, 'no_preview_url');
         setMessage('Audio not available for this track. Skipping...', 'status-info');
         setTimeout(() => startRound(), 1500);
         return;
@@ -481,22 +500,15 @@ function showEndGameModal() {
                     <div class="stat-chip"><span class="stat-label">Difficulty</span><span class="stat-value">${diffLabel}</span></div>
                 </div>
                 ${missedHTML}
+                <p class="text-center text-sm" style="color: var(--text-muted);">Score saved for <strong style="color: var(--accent);">${escapeHTML(playerName)}</strong></p>
                 <div class="flex flex-col gap-3 mt-4">
-                    <button id="save-score-btn" class="accent-button w-full py-3 px-6">Save to Leaderboard</button>
-                    <button id="play-again-btn" class="secondary-button w-full py-3 px-6">Play Again</button>
+                    <button id="play-again-btn" class="accent-button w-full py-3 px-6">Play Again</button>
                 </div>
             </div>
         </div>
     `;
 
-    document.getElementById('save-score-btn').addEventListener('click', () => {
-        const name = prompt('Enter your name for the leaderboard:');
-        if (name && name.trim()) {
-            saveToLeaderboard(name.trim(), score, totalRounds, accuracy, bestStreak, selectedDifficulty);
-            document.getElementById('save-score-btn').textContent = 'Saved!';
-            document.getElementById('save-score-btn').disabled = true;
-        }
-    });
+    saveToLeaderboard(playerName, score, totalRounds, accuracy, bestStreak, selectedDifficulty);
 
     document.getElementById('play-again-btn').addEventListener('click', () => {
         EL.modalContainer.innerHTML = '';
@@ -507,7 +519,7 @@ function showEndGameModal() {
 // ─── Leaderboard (localStorage) ──────────────────────────────
 function getLeaderboard() {
     try {
-        return JSON.parse(localStorage.getItem('sampleHunterLeaderboard') || '[]');
+        return JSON.parse(localStorage.getItem('sampleologyLeaderboard') || '[]');
     } catch { return []; }
 }
 
@@ -523,7 +535,7 @@ function saveToLeaderboard(name, score, rounds, accuracy, bestStreak, difficulty
         date: new Date().toLocaleDateString()
     });
     lb.sort((a, b) => b.score - a.score || b.accuracy - a.accuracy);
-    localStorage.setItem('sampleHunterLeaderboard', JSON.stringify(lb.slice(0, 20)));
+    localStorage.setItem('sampleologyLeaderboard', JSON.stringify(lb.slice(0, 20)));
 }
 
 function showLeaderboardModal() {
@@ -577,7 +589,7 @@ function resetFullGame() {
     roundActive = false;
 
     EL.score.textContent = '0';
-    EL.round.textContent = '0';
+    EL.round.textContent = '0/5';
     EL.streak.textContent = '0';
     stopAudio();
     clearInterval(timerInterval);
@@ -586,15 +598,10 @@ function resetFullGame() {
 }
 
 function initGame() {
-    const filterFn = ARTIST_FILTERS[selectedFilter] || ARTIST_FILTERS.all;
-    availableSongs = data.filter(filterFn);
+    playerName = (EL.playerNameInput.value || '').trim() || 'Anonymous';
+    availableSongs = shuffle(data).slice(0, ROUNDS_PER_GAME);
     totalRounds = availableSongs.length;
     guessTimerSeconds = DIFFICULTY[selectedDifficulty].time;
-
-    if (availableSongs.length === 0) {
-        setMessage('No songs match this filter. Try "All".', 'status-info');
-        return;
-    }
 
     score = 0;
     round = 0;
@@ -603,7 +610,7 @@ function initGame() {
     hintsUsed = 0;
     missedAnswers = [];
     EL.score.textContent = '0';
-    EL.round.textContent = '0';
+    EL.round.textContent = `0/${totalRounds}`;
     EL.streak.textContent = '0';
 
     showScreen('game-screen');
@@ -611,14 +618,6 @@ function initGame() {
 }
 
 // ─── Setup Screen Event Listeners ─────────────────────────────
-EL.artistFilter.addEventListener('click', (e) => {
-    const chip = e.target.closest('[data-filter]');
-    if (!chip) return;
-    EL.artistFilter.querySelectorAll('.option-chip').forEach(c => c.classList.remove('selected'));
-    chip.classList.add('selected');
-    selectedFilter = chip.dataset.filter;
-});
-
 EL.difficultySelect.addEventListener('click', (e) => {
     const chip = e.target.closest('[data-difficulty]');
     if (!chip) return;
