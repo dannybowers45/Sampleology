@@ -24,10 +24,6 @@
         "sampled": { "artist": "Kanye West", "title": "Jesus Walks", "genre": "Hip-Hop" }
     },
     {
-        "sample": { "artist": "Fela Kuti", "title": "Gentleman", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Power", "genre": "Hip-Hop" }
-    },
-    {
         "sample": { "artist": "Timmy Thomas", "title": "Why Can't We Live Together", "genre": "Soul" },
         "sampled": { "artist": "Drake", "title": "Hotline Bling", "genre": "Hip-Hop" }
     },
@@ -68,16 +64,8 @@
         "sampled": { "artist": "2Pac", "title": "California Love", "genre": "Hip-Hop" }
     },
     {
-        "sample": { "artist": "James Brown", "title": "Funky Drummer", "genre": "Funk" },
-        "sampled": { "artist": "Public Enemy", "title": "Fight the Power", "genre": "Hip-Hop" }
-    },
-    {
         "sample": { "artist": "James Brown", "title": "The Payback", "genre": "Funk" },
         "sampled": { "artist": "Kendrick Lamar", "title": "King Kunta", "genre": "Hip-Hop" }
-    },
-    {
-        "sample": { "artist": "Led Zeppelin", "title": "When the Levee Breaks", "genre": "Rock" },
-        "sampled": { "artist": "Beastie Boys", "title": "Rhymin & Stealin", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Bobby Caldwell", "title": "What You Won't Do for Love", "genre": "R&B" },

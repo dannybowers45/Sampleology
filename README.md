@@ -1,23 +1,20 @@
-# Grace's Sample Hunter
+# Sampleology
 
-A music sampling guessing game that tests your knowledge of hip-hop production history. Listen to a classic song and guess which modern track sampled it.
+A music sampling guessing game that tests your knowledge of (primarily hip-hop) production history. Listen to a classic song and guess which modern track sampled it.
 
-Built to celebrate the art of sampling — the creative practice of reusing portions of older recordings in new songs — through an interactive, timed quiz format.
+I built this because sampling is sweet and should be more appreciated.
 
-<!-- Add a screenshot or GIF demo here -->
-<!-- ![Grace's Sample Hunter screenshot](screenshot.png) -->
 
 ## How It Works
 
-1. **Start** — Click "START GAME" to begin a round
-2. **Listen** — A 30-second preview of a classic/original song plays automatically
-3. **Guess** — Type the name of the modern song or artist that sampled it
-4. **Score** — Correct guesses earn a point; incorrect guesses or timeouts reveal the answer
-5. **Hear the answer** — The sampled (modern) track plays so you can hear the connection
-6. **Repeat** — Click "NEXT ROUND" to continue through the full song pool
-7. **Game Over** — Once all songs are exhausted, your final score is displayed
+1. **Start** — Enter name, select difficult and genre and hit start game
+2. **Listen** — A preview of a classic/original song plays automatically
+3. **Guess** — Type the name of the modern song and artist that sampled it
+4. **Score** — Correct guesses earn a point, with penalties if you use hints
+5. **Hear the answer** — The later track that samples the original plays so you can hear the connection
+6. **Repeat** — Click "NEXT ROUND" to continue through the song pool until the game ends
 
-You can guess by entering either the **song title** or the **artist name** — matching is case-insensitive and ignores punctuation.
+You can by entering both the **song title** or the **artist name** — matching is case-insensitive and ignores punctuation.
 
 ## Tech Stack
 
@@ -36,7 +33,7 @@ No frameworks, no build tools — runs as a static site served from any HTTP ser
 2. Serve the project with any static HTTP server:
    ```bash
    # Python (built-in)
-   cd graceSample
+   cd sampleology
    python3 -m http.server 8000
 
    # Or Node.js (npx)
@@ -55,12 +52,10 @@ No frameworks, no build tools — runs as a static site served from any HTTP ser
 graceSample/
 ├── index.html        # Main page — UI markup and all CSS styles
 ├── app.js            # Game logic — state, timer, API calls, guess matching
-├── samples.json      # Small dataset (9 sample pairs, Kanye West focused)
-├── extra.json        # Extended dataset (~50 pairs: Kanye, J. Cole, Drake)
-├── test.json         # Full dataset (~70 pairs: Kanye, J. Cole, Drake, and more)
+├── data.json         # Large dataset
+├── easy_data.json    # Limited dataset with easier pairings
 ├── notes.json        # Example iTunes API response (reference)
 ├── favicon.png       # Site icon
-├── favicon2.png      # Alternate icon
 └── README.md         # This file
 ```
 
@@ -69,16 +64,16 @@ graceSample/
 Sample pairs are stored as JSON arrays. Each entry maps an original song to the modern track that sampled it:
 
 ```json
-{
-  "sample": {
-    "artist": "Daft Punk",
-    "title": "Harder, Better, Faster, Stronger"
+[
+  {
+        "sample": { "artist": "Daft Punk", "title": "Harder, Better, Faster, Stronger", "genre": "Electronic" },
+        "sampled": { "artist": "Kanye West", "title": "Stronger", "genre": "Hip-Hop" }
   },
-  "sampled": {
-    "artist": "Kanye West",
-    "title": "Stronger"
-  }
-}
+  {
+        "sample": { "artist": "Dionne Warwick", "title": "Walk on By", "genre": "Soul" },
+        "sampled": { "artist": "Doja Cat", "title": "Paint the Town Red", "genre": "Hip-Hop"}
+  },
+]
 ```
 
 - `sample` — the original/classic track that gets played for the user
@@ -86,21 +81,5 @@ Sample pairs are stored as JSON arrays. Each entry maps an original song to the 
 
 To add new entries, append objects in this format to the active JSON data file.
 
-## Current Features
 
-- 30-second timed rounds with animated progress bar
-- Normalized string matching (case-insensitive, punctuation-stripped)
-- Accept either song title or artist name as a valid guess
-- Score and round tracking
-- Audio preview of the correct answer after each guess
-- Random song selection with no repeats within a session
-- Responsive dark UI with golden accent theme
-- Keyboard support (Enter to submit)
 
-## Roadmap
-
-See [planning.md](planning.md) for a prioritized list of proposed improvements, organized into:
-
-- **Tier 1** — Bug fixes and production polish
-- **Tier 2** — UX enhancements (artwork, hints, animations, difficulty modes)
-- **Tier 3** — Stretch goals (leaderboards, multiplayer, PWA support)
