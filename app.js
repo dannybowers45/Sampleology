@@ -4,14 +4,10 @@ import data from './data.json' with { type: 'json' };
 const DEBUG = false;
 const PLAY_ICON = 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.26a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z';
 const PAUSE_ICON = 'M6 5h4V19H6zm8 0h4v14h-4z';
-
-const DIFFICULTY = {
-    easy:   { time: 30, matchMode: 'both', label: 'Easy' },
-    normal: { time: 20, matchMode: 'both', label: 'Normal' },
-    hard:   { time: 10, matchMode: 'title', label: 'Hard' }
-};
-
 const ROUNDS_PER_GAME = 5;
+
+// ─── Genre Discovery ──────────────────────────────────────────
+const ALL_GENRES = [...new Set(data.map(d => d.sample.genre))].sort();
 
 // ─── State ────────────────────────────────────────────────────
 let score = 0;
@@ -28,9 +24,9 @@ let hintLevel = 0;
 let missedAnswers = [];
 let availableSongs = [];
 let playerName = '';
-let selectedDifficulty = 'normal';
-let guessTimerSeconds = 30;
+let selectedGenre = 'all';
 let roundActive = false;
+let audioEnded = false;
 
 // ─── DOM Elements ─────────────────────────────────────────────
 const EL = {
@@ -38,7 +34,7 @@ const EL = {
     gameScreen:       document.getElementById('game-screen'),
     modalContainer:   document.getElementById('modal-container'),
     playerNameInput:  document.getElementById('player-name-input'),
-    difficultySelect: document.getElementById('difficulty-select'),
+    genreSelect:      document.getElementById('genre-select'),
     startGameButton:  document.getElementById('start-game-button'),
     showLeaderboard:  document.getElementById('show-leaderboard-btn'),
     score:            document.getElementById('current-score'),
@@ -48,7 +44,8 @@ const EL = {
     playButton:       document.getElementById('play-button'),
     buttonText:       document.getElementById('button-text'),
     playPath:         document.getElementById('play-path'),
-    guessInput:       document.getElementById('guess-input'),
+    guessTitleInput:  document.getElementById('guess-title-input'),
+    guessArtistInput: document.getElementById('guess-artist-input'),
     submitButton:     document.getElementById('submit-button'),
     hintButton:       document.getElementById('hint-button'),
     skipButton:       document.getElementById('skip-button'),
@@ -61,6 +58,16 @@ const EL = {
 audioPlayer.addEventListener('ended', () => {
     isPlaying = false;
     EL.playPath.setAttribute('d', PLAY_ICON);
+    clearInterval(timerInterval);
+    EL.progressFill.style.width = '0%';
+    EL.progressFill.classList.remove('urgent');
+
+    if (roundActive) {
+        audioEnded = true;
+        EL.playButton.disabled = false;
+        EL.buttonText.textContent = 'REPLAY';
+        setMessage('Song finished — submit your guess!', 'status-info');
+    }
 });
 
 // ─── Utilities ────────────────────────────────────────────────
@@ -208,13 +215,6 @@ function playSFX(type) {
         gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
         osc.start(audioCtx.currentTime);
         osc.stop(audioCtx.currentTime + 0.35);
-    } else if (type === 'timeout') {
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(220, audioCtx.currentTime + 0.5);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
-        osc.start(audioCtx.currentTime);
-        osc.stop(audioCtx.currentTime + 0.5);
     }
 }
 
@@ -235,26 +235,33 @@ function animateElement(el, className) {
     el.classList.add(className);
 }
 
-// ─── Timer ────────────────────────────────────────────────────
-function startTimer(duration) {
-    const startTime = Date.now();
+// ─── Playback Tracker (replaces old timer) ────────────────────
+function startPlaybackTracker() {
     EL.progressFill.classList.remove('urgent');
-    EL.progressFill.style.transition = `width ${duration}s linear`;
-    setTimeout(() => { EL.progressFill.style.width = '0%'; }, 50);
+    EL.progressFill.style.transition = 'none';
+    EL.progressFill.style.width = '100%';
 
-    timerInterval = setInterval(() => {
-        const elapsed = (Date.now() - startTime) / 1000;
-        const remaining = duration - elapsed;
+    const onCanPlay = () => {
+        const duration = audioPlayer.duration;
+        if (!duration || !isFinite(duration)) return;
 
-        if (remaining <= duration * 0.25) {
-            EL.progressFill.classList.add('urgent');
-        }
+        timerInterval = setInterval(() => {
+            if (!audioPlayer.paused && isFinite(audioPlayer.duration)) {
+                const progress = 1 - (audioPlayer.currentTime / audioPlayer.duration);
+                EL.progressFill.style.width = `${Math.max(0, progress * 100)}%`;
 
-        if (remaining <= 0) {
-            clearInterval(timerInterval);
-            handleTimeout();
-        }
-    }, 500);
+                if (progress <= 0.25) {
+                    EL.progressFill.classList.add('urgent');
+                }
+            }
+        }, 100);
+    };
+
+    audioPlayer.addEventListener('loadedmetadata', onCanPlay, { once: true });
+    // Fallback if metadata already loaded
+    if (audioPlayer.readyState >= 1 && isFinite(audioPlayer.duration)) {
+        onCanPlay();
+    }
 }
 
 // ─── Reset Controls ───────────────────────────────────────────
@@ -262,14 +269,19 @@ function resetControls() {
     stopAudio();
     clearInterval(timerInterval);
     roundActive = false;
+    audioEnded = false;
 
     EL.playInfo.textContent = 'Ready for next round...';
     EL.playButton.disabled = false;
     EL.buttonText.textContent = 'NEXT ROUND';
     EL.playPath.setAttribute('d', PLAY_ICON);
 
-    EL.guessInput.value = '';
-    EL.guessInput.disabled = true;
+    EL.guessTitleInput.value = '';
+    EL.guessTitleInput.disabled = true;
+    EL.guessTitleInput.classList.remove('input-correct', 'input-incorrect');
+    EL.guessArtistInput.value = '';
+    EL.guessArtistInput.disabled = true;
+    EL.guessArtistInput.classList.remove('input-correct', 'input-incorrect');
     EL.submitButton.disabled = true;
     EL.hintButton.disabled = true;
     EL.skipButton.disabled = true;
@@ -283,11 +295,12 @@ function resetControls() {
 async function startRound() {
     resetControls();
     hintLevel = 0;
+    EL.hintButton.textContent = 'Hint (3)';
     round++;
     EL.round.textContent = `${round}/${totalRounds}`;
 
     if (availableSongs.length === 0) {
-        showEndGameModal();
+        endGame();
         return;
     }
 
@@ -317,39 +330,18 @@ async function startRound() {
     // Update UI (use textContent to prevent XSS)
     EL.playInfo.textContent = `Playing: ${originalSample.title} by ${originalSample.artist}`;
     EL.playButton.disabled = true;
-    EL.guessInput.disabled = false;
+    EL.guessTitleInput.disabled = false;
+    EL.guessArtistInput.disabled = false;
     EL.submitButton.disabled = false;
     EL.hintButton.disabled = false;
     EL.skipButton.disabled = false;
     EL.buttonText.textContent = 'PLAYING...';
-    EL.guessInput.focus();
+    EL.guessTitleInput.focus();
     roundActive = true;
-    setMessage('What song sampled this?', 'status-neutral');
+    audioEnded = false;
+    setMessage('What song sampled this? (1 pt for title, 1 pt for artist)', 'status-neutral');
 
-    startTimer(guessTimerSeconds);
-}
-
-// ─── Timeout ──────────────────────────────────────────────────
-async function handleTimeout() {
-    if (!roundActive) return;
-    roundActive = false;
-    const sampled = currentAnswer.sampled;
-
-    streak = 0;
-    EL.streak.textContent = streak;
-    missedAnswers.push({ sample: currentAnswer.sample, sampled });
-
-    playSFX('timeout');
-    setMessage(`Time's up! It was: ${sampled.title} by ${sampled.artist}`, 'incorrect');
-    animateElement(EL.messageBox, 'anim-shake');
-
-    resetControls();
-    const { previewUrl, artworkUrl } = await fetchAudioSrc(sampled);
-    if (previewUrl) {
-        audioPlayer.src = previewUrl;
-        setArtwork(artworkUrl);
-        playAudio();
-    }
+    startPlaybackTracker();
 }
 
 // ─── Hint System ──────────────────────────────────────────────
@@ -403,8 +395,10 @@ async function submitGuess() {
     roundActive = false;
     clearInterval(timerInterval);
 
-    const userGuess = EL.guessInput.value.trim();
-    if (!userGuess) {
+    const titleGuess = EL.guessTitleInput.value.trim();
+    const artistGuess = EL.guessArtistInput.value.trim();
+
+    if (!titleGuess && !artistGuess) {
         roundActive = true;
         return;
     }
@@ -413,49 +407,59 @@ async function submitGuess() {
     const correctTitle = sampled.title;
     const correctArtist = sampled.artist;
 
-    let isCorrect = fuzzyMatch(userGuess, correctTitle) || fuzzyMatch(userGuess, correctArtist);
+    let titleCorrect = false;
+    let artistCorrect = false;
 
-    // Also check aliases if present
-    if (!isCorrect && sampled.aliases) {
-        const aliases = typeof sampled.aliases === 'string'
-            ? sampled.aliases.split(',').map(a => a.trim()).filter(Boolean)
-            : [];
-        isCorrect = aliases.some(alias => fuzzyMatch(userGuess, alias));
+    if (titleGuess) {
+        titleCorrect = fuzzyMatch(titleGuess, correctTitle);
+        // Check aliases for title
+        if (!titleCorrect && sampled.aliases) {
+            const aliases = typeof sampled.aliases === 'string'
+                ? sampled.aliases.split(',').map(a => a.trim()).filter(Boolean)
+                : [];
+            titleCorrect = aliases.some(alias => fuzzyMatch(titleGuess, alias));
+        }
     }
 
-    // For hard mode: only accept title match
-    if (selectedDifficulty === 'hard' && !fuzzyMatch(userGuess, correctTitle)) {
-        isCorrect = false;
+    if (artistGuess) {
+        artistCorrect = fuzzyMatch(artistGuess, correctArtist);
     }
 
+    const pointsEarned = (titleCorrect ? 1 : 0) + (artistCorrect ? 1 : 0);
     const answerText = `${sampled.title} by ${sampled.artist}`;
 
-    if (isCorrect) {
-        const hintPenalty = hintLevel * 0.5;
-        const pointsEarned = Math.max(0.5, 1 - hintPenalty);
-        score += pointsEarned;
+    // Visual feedback on inputs
+    EL.guessTitleInput.classList.add(titleCorrect ? 'input-correct' : (titleGuess ? 'input-incorrect' : ''));
+    EL.guessArtistInput.classList.add(artistCorrect ? 'input-correct' : (artistGuess ? 'input-incorrect' : ''));
+
+    if (pointsEarned === 2) {
+        score += 2;
         streak++;
         if (streak > bestStreak) bestStreak = streak;
-
-        EL.score.textContent = score % 1 === 0 ? score : score.toFixed(1);
-        EL.streak.textContent = streak;
-
         playSFX('correct');
         const streakText = streak >= 3 ? ` (${streak} streak!)` : '';
-        const hintText = hintLevel > 0 ? ` (${pointsEarned} pts)` : '';
-        setMessage(`Correct!${hintText} ${answerText}${streakText}`, 'correct');
+        setMessage(`Perfect! +2 pts! ${answerText}${streakText}`, 'correct');
+        animateElement(EL.messageBox, 'anim-pulse');
+    } else if (pointsEarned === 1) {
+        score += 1;
+        streak = 0;
+        const which = titleCorrect ? 'Title' : 'Artist';
+        playSFX('correct');
+        setMessage(`${which} correct! +1 pt. Answer: ${answerText}`, 'correct');
         animateElement(EL.messageBox, 'anim-pulse');
     } else {
         streak = 0;
-        EL.streak.textContent = streak;
         missedAnswers.push({ sample: currentAnswer.sample, sampled });
-
         playSFX('incorrect');
         setMessage(`Incorrect. It was: ${answerText}`, 'incorrect');
         animateElement(EL.messageBox, 'anim-shake');
     }
 
+    EL.score.textContent = score;
+    EL.streak.textContent = streak;
+
     resetControls();
+    // Play the sampled song as reveal
     const { previewUrl, artworkUrl } = await fetchAudioSrc(sampled);
     if (previewUrl) {
         audioPlayer.src = previewUrl;
@@ -464,56 +468,16 @@ async function submitGuess() {
     }
 }
 
-// ─── End Game Modal ───────────────────────────────────────────
-function showEndGameModal() {
+// ─── End Game → Leaderboard ───────────────────────────────────
+function endGame() {
     stopAudio();
     roundActive = false;
 
-    const accuracy = totalRounds > 0 ? Math.round((score / totalRounds) * 100) : 0;
-    const diffLabel = DIFFICULTY[selectedDifficulty].label;
+    const maxScore = totalRounds * 2;
+    const accuracy = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
 
-    let missedHTML = '';
-    if (missedAnswers.length > 0) {
-        const items = missedAnswers.map(m => {
-            const sampleText = document.createElement('span');
-            sampleText.textContent = `${m.sample.title} by ${m.sample.artist}`;
-            const sampledText = document.createElement('span');
-            sampledText.textContent = `${m.sampled.title} by ${m.sampled.artist}`;
-            return `<div class="missed-item">${sampleText.textContent} → ${sampledText.textContent}</div>`;
-        }).join('');
-        missedHTML = `
-            <p class="option-group-label mt-4">Missed Answers</p>
-            <div class="missed-list mt-2">${items}</div>
-        `;
-    }
-
-    const scoreDisplay = score % 1 === 0 ? score : score.toFixed(1);
-
-    EL.modalContainer.innerHTML = `
-        <div class="modal-overlay">
-            <div class="modal-content anim-fade-in space-y-4">
-                <h2 class="text-2xl font-black text-center" style="color: var(--accent);">Game Over!</h2>
-                <div class="stat-grid" style="grid-template-columns: repeat(2, 1fr);">
-                    <div class="stat-chip"><span class="stat-label">Final Score</span><span class="stat-value">${scoreDisplay}/${totalRounds}</span></div>
-                    <div class="stat-chip"><span class="stat-label">Accuracy</span><span class="stat-value">${accuracy}%</span></div>
-                    <div class="stat-chip"><span class="stat-label">Best Streak</span><span class="stat-value">${bestStreak}</span></div>
-                    <div class="stat-chip"><span class="stat-label">Difficulty</span><span class="stat-value">${diffLabel}</span></div>
-                </div>
-                ${missedHTML}
-                <p class="text-center text-sm" style="color: var(--text-muted);">Score saved for <strong style="color: var(--accent);">${escapeHTML(playerName)}</strong></p>
-                <div class="flex flex-col gap-3 mt-4">
-                    <button id="play-again-btn" class="accent-button w-full py-3 px-6">Play Again</button>
-                </div>
-            </div>
-        </div>
-    `;
-
-    saveToLeaderboard(playerName, score, totalRounds, accuracy, bestStreak, selectedDifficulty);
-
-    document.getElementById('play-again-btn').addEventListener('click', () => {
-        EL.modalContainer.innerHTML = '';
-        resetFullGame();
-    });
+    saveToLeaderboard(playerName, score, totalRounds, accuracy, bestStreak, selectedGenre);
+    showLeaderboardModal(true, score, maxScore, accuracy, bestStreak, missedAnswers);
 }
 
 // ─── Leaderboard (localStorage) ──────────────────────────────
@@ -523,50 +487,100 @@ function getLeaderboard() {
     } catch { return []; }
 }
 
-function saveToLeaderboard(name, score, rounds, accuracy, bestStreak, difficulty) {
+function saveToLeaderboard(name, score, rounds, accuracy, bestStreak, genre) {
     const lb = getLeaderboard();
     lb.push({
         name,
         score: Math.round(score * 10) / 10,
+        maxScore: rounds * 2,
         rounds,
         accuracy,
         bestStreak,
-        difficulty,
+        genre: genre === 'all' ? 'All' : genre,
         date: new Date().toLocaleDateString()
     });
     lb.sort((a, b) => b.score - a.score || b.accuracy - a.accuracy);
     localStorage.setItem('sampleologyLeaderboard', JSON.stringify(lb.slice(0, 20)));
 }
 
-function showLeaderboardModal() {
+function showLeaderboardModal(isEndGame = false, gameScore = 0, maxScore = 0, accuracy = 0, gameBestStreak = 0, gameMissed = []) {
     const lb = getLeaderboard();
 
+    // End game summary section
+    let summaryHTML = '';
+    if (isEndGame) {
+        let missedHTML = '';
+        if (gameMissed.length > 0) {
+            const items = gameMissed.map(m => {
+                const sampleText = document.createElement('span');
+                sampleText.textContent = `${m.sample.title} by ${m.sample.artist}`;
+                const sampledText = document.createElement('span');
+                sampledText.textContent = `${m.sampled.title} by ${m.sampled.artist}`;
+                return `<div class="missed-item">${sampleText.textContent} → ${sampledText.textContent}</div>`;
+            }).join('');
+            missedHTML = `
+                <p class="option-group-label mt-3">Missed Answers</p>
+                <div class="missed-list mt-2">${items}</div>
+            `;
+        }
+
+        summaryHTML = `
+            <h2 class="text-2xl font-black text-center" style="color: var(--accent);">Game Over!</h2>
+            <div class="stat-grid mt-3" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="stat-chip"><span class="stat-label">Final Score</span><span class="stat-value">${gameScore}/${maxScore}</span></div>
+                <div class="stat-chip"><span class="stat-label">Accuracy</span><span class="stat-value">${accuracy}%</span></div>
+                <div class="stat-chip"><span class="stat-label">Best Streak</span><span class="stat-value">${gameBestStreak}</span></div>
+                <div class="stat-chip"><span class="stat-label">Genre</span><span class="stat-value">${selectedGenre === 'all' ? 'All' : selectedGenre}</span></div>
+            </div>
+            ${missedHTML}
+            <hr style="border-color: rgba(255,255,255,0.06); margin: 16px 0;">
+        `;
+    }
+
+    // Leaderboard rows
     let rowsHTML = '';
     if (lb.length === 0) {
         rowsHTML = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">No scores yet. Play a game!</p>';
     } else {
-        rowsHTML = lb.map((entry, i) => `
+        rowsHTML = lb.map((entry, i) => {
+            const scoreDisplay = entry.maxScore ? `${entry.score}/${entry.maxScore}` : `${entry.score}/${entry.rounds}`;
+            const genreDisplay = entry.genre ? ` | ${entry.genre}` : '';
+            return `
             <div class="lb-row">
                 <span class="lb-rank">#${i + 1}</span>
                 <span class="lb-name">${escapeHTML(entry.name)}</span>
-                <span class="lb-score">${entry.score}/${entry.rounds}</span>
-                <span class="lb-details">${entry.accuracy}% | ${entry.difficulty || 'normal'} | ${entry.date}</span>
+                <span class="lb-score">${scoreDisplay}</span>
+                <span class="lb-details">${entry.accuracy}%${genreDisplay} | ${entry.date}</span>
             </div>
-        `).join('');
+        `}).join('');
     }
+
+    const title = isEndGame ? 'Leaderboard' : 'Leaderboard';
 
     EL.modalContainer.innerHTML = `
         <div class="modal-overlay">
             <div class="modal-content anim-fade-in space-y-4">
-                <h2 class="text-2xl font-black text-center" style="color: var(--accent);">Leaderboard</h2>
+                ${summaryHTML}
+                <h3 class="text-xl font-bold text-center" style="color: var(--accent);">${title}</h3>
                 <div class="space-y-2">${rowsHTML}</div>
-                <button id="close-lb-btn" class="ghost-button w-full mt-4">Close</button>
+                <div class="flex flex-col gap-3 mt-4">
+                    <button id="play-again-btn" class="accent-button w-full py-3 px-6">Play Again</button>
+                    <button id="close-lb-btn" class="ghost-button w-full">Back to Menu</button>
+                </div>
             </div>
         </div>
     `;
 
+    document.getElementById('play-again-btn').addEventListener('click', () => {
+        EL.modalContainer.innerHTML = '';
+        resetFullGame();
+    });
+
     document.getElementById('close-lb-btn').addEventListener('click', () => {
         EL.modalContainer.innerHTML = '';
+        if (isEndGame) {
+            resetFullGame();
+        }
     });
 }
 
@@ -587,6 +601,7 @@ function resetFullGame() {
     missedAnswers = [];
     currentAnswer = null;
     roundActive = false;
+    audioEnded = false;
 
     EL.score.textContent = '0';
     EL.round.textContent = '0/5';
@@ -599,9 +614,20 @@ function resetFullGame() {
 
 function initGame() {
     playerName = (EL.playerNameInput.value || '').trim() || 'Anonymous';
-    availableSongs = shuffle(data).slice(0, ROUNDS_PER_GAME);
+
+    let pool = data;
+    if (selectedGenre !== 'all') {
+        pool = data.filter(d => d.sample.genre === selectedGenre);
+    }
+
+    const roundCount = Math.min(ROUNDS_PER_GAME, pool.length);
+    if (roundCount === 0) {
+        setMessage('No songs available for this genre.', 'status-info');
+        return;
+    }
+
+    availableSongs = shuffle(pool).slice(0, roundCount);
     totalRounds = availableSongs.length;
-    guessTimerSeconds = DIFFICULTY[selectedDifficulty].time;
 
     score = 0;
     round = 0;
@@ -617,25 +643,62 @@ function initGame() {
     startRound();
 }
 
+// ─── Build Genre Filter Chips ─────────────────────────────────
+function buildGenreChips() {
+    const allCount = data.length;
+    let html = `<button class="option-chip selected" data-genre="all">All (${allCount})</button>`;
+
+    ALL_GENRES.forEach(genre => {
+        const count = data.filter(d => d.sample.genre === genre).length;
+        html += `<button class="option-chip" data-genre="${genre}">${genre} (${count})</button>`;
+    });
+
+    EL.genreSelect.innerHTML = html;
+}
+
+buildGenreChips();
+
 // ─── Setup Screen Event Listeners ─────────────────────────────
-EL.difficultySelect.addEventListener('click', (e) => {
-    const chip = e.target.closest('[data-difficulty]');
+EL.genreSelect.addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-genre]');
     if (!chip) return;
-    EL.difficultySelect.querySelectorAll('.option-chip').forEach(c => c.classList.remove('selected'));
+    EL.genreSelect.querySelectorAll('.option-chip').forEach(c => c.classList.remove('selected'));
     chip.classList.add('selected');
-    selectedDifficulty = chip.dataset.difficulty;
+    selectedGenre = chip.dataset.genre;
 });
 
 EL.startGameButton.addEventListener('click', initGame);
-EL.showLeaderboard.addEventListener('click', showLeaderboardModal);
+EL.showLeaderboard.addEventListener('click', () => showLeaderboardModal(false));
 
 // ─── Game Screen Event Listeners ──────────────────────────────
-EL.playButton.addEventListener('click', startRound);
+EL.playButton.addEventListener('click', () => {
+    // If round is active and audio ended, replay the audio
+    if (roundActive && audioEnded) {
+        audioPlayer.currentTime = 0;
+        playAudio();
+        audioEnded = false;
+        EL.playButton.disabled = true;
+        EL.buttonText.textContent = 'PLAYING...';
+        startPlaybackTracker();
+        return;
+    }
+    // Otherwise start next round
+    startRound();
+});
+
 EL.submitButton.addEventListener('click', submitGuess);
 EL.hintButton.addEventListener('click', giveHint);
 EL.skipButton.addEventListener('click', skipRound);
 
-EL.guessInput.addEventListener('keypress', (e) => {
+// Enter in title → focus artist; Enter in artist → submit
+EL.guessTitleInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        EL.guessArtistInput.focus();
+    }
+});
+
+EL.guessArtistInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && !EL.submitButton.disabled) {
         e.preventDefault();
         submitGuess();

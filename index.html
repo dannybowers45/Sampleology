@@ -184,6 +184,15 @@
         .input-field::placeholder { color: rgba(255, 255, 255, 0.35); }
         .input-field:disabled { opacity: 0.5; }
 
+        .input-field.input-correct {
+            border-color: rgba(110, 230, 170, 0.6);
+            box-shadow: 0 0 0 3px rgba(110, 230, 170, 0.15);
+        }
+        .input-field.input-incorrect {
+            border-color: rgba(255, 96, 96, 0.6);
+            box-shadow: 0 0 0 3px rgba(255, 96, 96, 0.15);
+        }
+
         /* Timer */
         #timer-bar {
             height: 10px;
@@ -314,10 +323,6 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.03); }
         }
-        @keyframes confettiBurst {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(1.5); }
-        }
         .anim-fade-in { animation: fadeIn 0.35s ease-out; }
         .anim-shake { animation: shakeX 0.4s ease-in-out; }
         .anim-pulse { animation: pulse 0.4s ease-in-out; }
@@ -405,11 +410,9 @@
                 <input type="text" id="player-name-input" placeholder="Enter your name" class="input-field" autocomplete="off">
             </div>
             <div class="setup-section">
-                <p class="option-group-label">Difficulty</p>
-                <div class="option-grid" id="difficulty-select">
-                    <button class="option-chip" data-difficulty="easy">Easy (30s)</button>
-                    <button class="option-chip selected" data-difficulty="normal">Normal (20s)</button>
-                    <button class="option-chip" data-difficulty="hard">Hard (10s)</button>
+                <p class="option-group-label">Genre</p>
+                <div class="option-grid" id="genre-select">
+                    <!-- Populated by JS -->
                 </div>
             </div>
             <button id="start-game-button" class="accent-button w-full flex justify-center items-center gap-2 py-3 px-6">
@@ -452,9 +455,15 @@
                 <div id="progress-fill" style="width: 100%; transition: none;"></div>
             </div>
 
-            <div class="mb-4">
-                <label for="guess-input" class="block text-sm font-medium mb-2">Your Guess (Song Title or Artist):</label>
-                <input type="text" id="guess-input" placeholder="e.g., California Love or Dr. Dre" class="input-field" disabled autocomplete="off">
+            <div class="mb-4 space-y-3">
+                <div>
+                    <label for="guess-title-input" class="block text-sm font-medium mb-2">Song Title:</label>
+                    <input type="text" id="guess-title-input" placeholder="e.g., California Love" class="input-field" disabled autocomplete="off">
+                </div>
+                <div>
+                    <label for="guess-artist-input" class="block text-sm font-medium mb-2">Artist:</label>
+                    <input type="text" id="guess-artist-input" placeholder="e.g., Dr. Dre" class="input-field" disabled autocomplete="off">
+                </div>
             </div>
             <div class="flex gap-3">
                 <button id="submit-button" class="secondary-button flex-1 py-3 px-6" disabled>SUBMIT GUESS</button>
@@ -482,8 +491,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- END GAME SCREEN (rendered by JS as modal) -->
     </div>
 
     <!-- MODAL CONTAINER -->
