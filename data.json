@@ -690,5 +690,41 @@
     {
         "sample": { "artist": "Average White Band", "title": "School Boy Crush", "genre": "Funk" },
         "sampled": { "artist": "Missy Elliott", "title": "Sock It 2 Me", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Cults", "title": "Bad Things", "genre": "Alternative" },
+        "sampled": { "artist": "J. Cole", "title": "She Knows", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Curtis Mayfield", "title": "Move on Up", "genre": "Jazz" },
+        "sampled": { "artist": "Kanye West", "title": "Touch the Sky", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Max Romeo", "title": "Chase the Devil", "genre": "Reggae" },
+        "sampled": { "artist": "Jay-Z", "title": "Lucifer", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Darondo", "title": "Didn't I", "genre": "Soul" },
+        "sampled": { "artist": "Vic Mensa", "title": "Say I Didn't", "genre": "Hip-Hop"}
+    },
+    {
+        "sample": { "artist": "Bow Wow Wow", "title": "Fools Rush In (Where Angels Fear to Tread)", "genre": "Pop" },
+        "sampled": { "artist": "Disclosure", "title": "Where Angels Fear to Tread", "genre": "Electronic"}
+    },
+    {
+        "sample": { "artist": "Etta James", "title": "Something's Got a Hold on Me", "genre": "Soul" },
+        "sampled": { "artist": "Vic Mensa", "title": "Say I Didn't", "genre": "Hip-Hop"}
+    },
+    {
+        "sample": { "artist": "Dionne Warwick", "title": "Walk on By", "genre": "Soul" },
+        "sampled": { "artist": "Doja Cat", "title": "Paint the Town Red", "genre": "Hip-Hop"}
+    },
+    {
+        "sample": { "artist": "Idris Muhammad", "title": "Could Heaven Ever Be Like This", "genre": "Soul" },
+        "sampled": { "artist": "Jamie xx", "title": "Loud Places", "genre": "Electronic"}
+    },
+    {
+        "sample": { "artist": "Sir Mix-A-Lot", "title": "Baby Got Back", "genre": "Hip-Hop" },
+        "sampled": { "artist": "Nicki Minaj", "title": "Anaconda", "genre": "Hip-Hop"}
     }
 ]

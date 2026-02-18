@@ -287,7 +287,6 @@ function resetControls() {
     EL.guessArtistInput.value = '';
     EL.guessArtistInput.disabled = true;
     EL.guessArtistInput.classList.remove('input-correct', 'input-incorrect');
-    EL.submitButton.disabled = true;
     EL.hintButton.disabled = true;
     EL.skipButton.disabled = true;
     EL.messageBox.classList.remove('correct', 'incorrect');
