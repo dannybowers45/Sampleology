@@ -1,4 +1,5 @@
 import data from './data.json' with { type: 'json' };
+import easyData from './easy_data.json' with { type: 'json' };
 
 // ─── Configuration ────────────────────────────────────────────
 const DEBUG = false;
@@ -6,8 +7,11 @@ const PLAY_ICON = 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.26a1 1 0 001.55
 const PAUSE_ICON = 'M6 5h4V19H6zm8 0h4v14h-4z';
 const ROUNDS_PER_GAME = 5;
 
-// ─── Genre Discovery ──────────────────────────────────────────
-const ALL_GENRES = [...new Set(data.map(d => d.sample.genre))].sort();
+// ─── Dataset Helpers ──────────────────────────────────────────
+let selectedDifficulty = 'full';
+function getActiveData() {
+    return selectedDifficulty === 'easy' ? easyData : data;
+}
 
 // ─── State ────────────────────────────────────────────────────
 let score = 0;
@@ -34,6 +38,7 @@ const EL = {
     gameScreen:       document.getElementById('game-screen'),
     modalContainer:   document.getElementById('modal-container'),
     playerNameInput:  document.getElementById('player-name-input'),
+    difficultySelect: document.getElementById('difficulty-select'),
     genreSelect:      document.getElementById('genre-select'),
     startGameButton:  document.getElementById('start-game-button'),
     showLeaderboard:  document.getElementById('show-leaderboard-btn'),
@@ -425,27 +430,36 @@ async function submitGuess() {
         artistCorrect = fuzzyMatch(artistGuess, correctArtist);
     }
 
-    const pointsEarned = (titleCorrect ? 1 : 0) + (artistCorrect ? 1 : 0);
+    const rawPoints = (titleCorrect ? 1 : 0) + (artistCorrect ? 1 : 0);
+    const hintPenalty = hintLevel * 0.5;
+    const pointsEarned = Math.max(0, rawPoints - hintPenalty);
     const answerText = `${sampled.title} by ${sampled.artist}`;
 
     // Visual feedback on inputs
     EL.guessTitleInput.classList.add(titleCorrect ? 'input-correct' : (titleGuess ? 'input-incorrect' : ''));
     EL.guessArtistInput.classList.add(artistCorrect ? 'input-correct' : (artistGuess ? 'input-incorrect' : ''));
 
-    if (pointsEarned === 2) {
-        score += 2;
-        streak++;
-        if (streak > bestStreak) bestStreak = streak;
+    const ptsDisplay = pointsEarned % 1 === 0 ? pointsEarned : pointsEarned.toFixed(1);
+    const hintText = hintLevel > 0 ? ` (${hintLevel} hint${hintLevel > 1 ? 's' : ''}: -${hintPenalty % 1 === 0 ? hintPenalty : hintPenalty.toFixed(1)})` : '';
+
+    if (rawPoints === 2) {
+        score += pointsEarned;
+        if (pointsEarned > 0) {
+            streak++;
+            if (streak > bestStreak) bestStreak = streak;
+        } else {
+            streak = 0;
+        }
         playSFX('correct');
         const streakText = streak >= 3 ? ` (${streak} streak!)` : '';
-        setMessage(`Perfect! +2 pts! ${answerText}${streakText}`, 'correct');
+        setMessage(`Perfect! +${ptsDisplay} pts${hintText}! ${answerText}${streakText}`, 'correct');
         animateElement(EL.messageBox, 'anim-pulse');
-    } else if (pointsEarned === 1) {
-        score += 1;
+    } else if (rawPoints === 1) {
+        score += pointsEarned;
         streak = 0;
         const which = titleCorrect ? 'Title' : 'Artist';
         playSFX('correct');
-        setMessage(`${which} correct! +1 pt. Answer: ${answerText}`, 'correct');
+        setMessage(`${which} correct! +${ptsDisplay} pt${hintText}. Answer: ${answerText}`, 'correct');
         animateElement(EL.messageBox, 'anim-pulse');
     } else {
         streak = 0;
@@ -455,7 +469,8 @@ async function submitGuess() {
         animateElement(EL.messageBox, 'anim-shake');
     }
 
-    EL.score.textContent = score;
+    const scoreDisplay = score % 1 === 0 ? score : score.toFixed(1);
+    EL.score.textContent = scoreDisplay;
     EL.streak.textContent = streak;
 
     resetControls();
@@ -476,7 +491,7 @@ function endGame() {
     const maxScore = totalRounds * 2;
     const accuracy = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
 
-    saveToLeaderboard(playerName, score, totalRounds, accuracy, bestStreak, selectedGenre);
+    saveToLeaderboard(playerName, score, totalRounds, accuracy, bestStreak, selectedGenre, hintsUsed);
     showLeaderboardModal(true, score, maxScore, accuracy, bestStreak, missedAnswers);
 }
 
@@ -487,7 +502,7 @@ function getLeaderboard() {
     } catch { return []; }
 }
 
-function saveToLeaderboard(name, score, rounds, accuracy, bestStreak, genre) {
+function saveToLeaderboard(name, score, rounds, accuracy, bestStreak, genre, hintsUsedTotal) {
     const lb = getLeaderboard();
     lb.push({
         name,
@@ -497,6 +512,7 @@ function saveToLeaderboard(name, score, rounds, accuracy, bestStreak, genre) {
         accuracy,
         bestStreak,
         genre: genre === 'all' ? 'All' : genre,
+        hintsUsed: hintsUsedTotal || 0,
         date: new Date().toLocaleDateString()
     });
     lb.sort((a, b) => b.score - a.score || b.accuracy - a.accuracy);
@@ -505,6 +521,8 @@ function saveToLeaderboard(name, score, rounds, accuracy, bestStreak, genre) {
 
 function showLeaderboardModal(isEndGame = false, gameScore = 0, maxScore = 0, accuracy = 0, gameBestStreak = 0, gameMissed = []) {
     const lb = getLeaderboard();
+
+    const fmtScore = (s) => s % 1 === 0 ? s : Number(s).toFixed(1);
 
     // End game summary section
     let summaryHTML = '';
@@ -527,7 +545,7 @@ function showLeaderboardModal(isEndGame = false, gameScore = 0, maxScore = 0, ac
         summaryHTML = `
             <h2 class="text-2xl font-black text-center" style="color: var(--accent);">Game Over!</h2>
             <div class="stat-grid mt-3" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="stat-chip"><span class="stat-label">Final Score</span><span class="stat-value">${gameScore}/${maxScore}</span></div>
+                <div class="stat-chip"><span class="stat-label">Final Score</span><span class="stat-value">${fmtScore(gameScore)}/${maxScore}</span></div>
                 <div class="stat-chip"><span class="stat-label">Accuracy</span><span class="stat-value">${accuracy}%</span></div>
                 <div class="stat-chip"><span class="stat-label">Best Streak</span><span class="stat-value">${gameBestStreak}</span></div>
                 <div class="stat-chip"><span class="stat-label">Genre</span><span class="stat-value">${selectedGenre === 'all' ? 'All' : selectedGenre}</span></div>
@@ -543,14 +561,16 @@ function showLeaderboardModal(isEndGame = false, gameScore = 0, maxScore = 0, ac
         rowsHTML = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">No scores yet. Play a game!</p>';
     } else {
         rowsHTML = lb.map((entry, i) => {
-            const scoreDisplay = entry.maxScore ? `${entry.score}/${entry.maxScore}` : `${entry.score}/${entry.rounds}`;
+            const scoreVal = fmtScore(entry.score);
+            const scoreDisplay = entry.maxScore ? `${scoreVal}/${entry.maxScore}` : `${scoreVal}/${entry.rounds}`;
             const genreDisplay = entry.genre ? ` | ${entry.genre}` : '';
+            const hintsDisplay = entry.hintsUsed != null ? ` | ${entry.hintsUsed} hint${entry.hintsUsed !== 1 ? 's' : ''}` : '';
             return `
             <div class="lb-row">
                 <span class="lb-rank">#${i + 1}</span>
                 <span class="lb-name">${escapeHTML(entry.name)}</span>
                 <span class="lb-score">${scoreDisplay}</span>
-                <span class="lb-details">${entry.accuracy}%${genreDisplay} | ${entry.date}</span>
+                <span class="lb-details">${entry.accuracy}%${genreDisplay}${hintsDisplay} | ${entry.date}</span>
             </div>
         `}).join('');
     }
@@ -615,9 +635,10 @@ function resetFullGame() {
 function initGame() {
     playerName = (EL.playerNameInput.value || '').trim() || 'Anonymous';
 
-    let pool = data;
+    const activeData = getActiveData();
+    let pool = activeData;
     if (selectedGenre !== 'all') {
-        pool = data.filter(d => d.sample.genre === selectedGenre);
+        pool = activeData.filter(d => d.sample.genre === selectedGenre);
     }
 
     const roundCount = Math.min(ROUNDS_PER_GAME, pool.length);
@@ -645,20 +666,32 @@ function initGame() {
 
 // ─── Build Genre Filter Chips ─────────────────────────────────
 function buildGenreChips() {
-    const allCount = data.length;
+    const activeData = getActiveData();
+    const genres = [...new Set(activeData.map(d => d.sample.genre))].sort();
+    const allCount = activeData.length;
     let html = `<button class="option-chip selected" data-genre="all">All (${allCount})</button>`;
 
-    ALL_GENRES.forEach(genre => {
-        const count = data.filter(d => d.sample.genre === genre).length;
+    genres.forEach(genre => {
+        const count = activeData.filter(d => d.sample.genre === genre).length;
         html += `<button class="option-chip" data-genre="${genre}">${genre} (${count})</button>`;
     });
 
     EL.genreSelect.innerHTML = html;
+    selectedGenre = 'all';
 }
 
 buildGenreChips();
 
 // ─── Setup Screen Event Listeners ─────────────────────────────
+EL.difficultySelect.addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-difficulty]');
+    if (!chip) return;
+    EL.difficultySelect.querySelectorAll('.option-chip').forEach(c => c.classList.remove('selected'));
+    chip.classList.add('selected');
+    selectedDifficulty = chip.dataset.difficulty;
+    buildGenreChips();
+});
+
 EL.genreSelect.addEventListener('click', (e) => {
     const chip = e.target.closest('[data-genre]');
     if (!chip) return;

@@ -1,694 +1,694 @@
 [
     {
         "sample": { "artist": "Luther Vandross", "title": "A House Is Not A Home", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Slow Jamz feat. Jamie Foxx" }
+        "sampled": { "artist": "Kanye West", "title": "Slow Jamz feat. Jamie Foxx", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Chaka Khan", "title": "Through the Fire", "genre": "R&B" },
-        "sampled": { "artist": "Kanye West", "title": "Through the Wire" }
+        "sampled": { "artist": "Kanye West", "title": "Through the Wire", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Michael Jackson", "title": "P.Y.T. (Pretty Young Thing)", "genre": "Pop" },
-        "sampled": { "artist": "Kanye West", "title": "Good Life feat. T-Pain" }
+        "sampled": { "artist": "Kanye West", "title": "Good Life feat. T-Pain", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Daft Punk", "title": "Harder, Better, Faster, Stronger", "genre": "Electronic" },
-        "sampled": { "artist": "Kanye West", "title": "Stronger" }
+        "sampled": { "artist": "Kanye West", "title": "Stronger", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Steely Dan", "title": "Kid Charlemagne", "genre": "Rock" },
-        "sampled": { "artist": "Kanye West", "title": "Champion" }
+        "sampled": { "artist": "Kanye West", "title": "Champion", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Labi Siffre", "title": "My Song", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "I Wonder" }
+        "sampled": { "artist": "Kanye West", "title": "I Wonder", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Eunice Collins", "title": "At the Hotel", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Bound 2" }
+        "sampled": { "artist": "Kanye West", "title": "Bound 2", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ponderosa Twins Plus One", "title": "Bound", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Bound 2" }
+        "sampled": { "artist": "Kanye West", "title": "Bound 2", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ray Charles", "title": "I Got a Woman", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Gold Digger feat. Jamie Foxx" }
+        "sampled": { "artist": "Kanye West", "title": "Gold Digger feat. Jamie Foxx", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Shirley Bassey", "title": "Diamonds Are Forever", "genre": "Pop" },
-        "sampled": { "artist": "Kanye West", "title": "Diamonds From Sierra Leone" }
+        "sampled": { "artist": "Kanye West", "title": "Diamonds From Sierra Leone", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Otis Redding", "title": "Try a Little Tenderness", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West & Jay-Z", "title": "Otis" }
+        "sampled": { "artist": "Kanye West & Jay-Z", "title": "Otis", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Eddie Harris", "title": "Am I Still the One", "genre": "Jazz" },
-        "sampled": { "artist": "Kanye West", "title": "Devil In A New Dress" }
+        "sampled": { "artist": "Kanye West", "title": "Devil In A New Dress", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Aphex Twin", "title": "Avril 14th", "genre": "Electronic" },
-        "sampled": { "artist": "Kanye West", "title": "Blame Game" }
+        "sampled": { "artist": "Kanye West", "title": "Blame Game", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Justice", "title": "Phantom", "genre": "Electronic" },
-        "sampled": { "artist": "Kanye West", "title": "I Wonder" }
+        "sampled": { "artist": "Kanye West", "title": "I Wonder", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Paula Abdul", "title": "Straight Up", "genre": "Pop" },
-        "sampled": { "artist": "J. Cole", "title": "Work Out" }
+        "sampled": { "artist": "J. Cole", "title": "Work Out", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Norman Connors", "title": "Love from the Sun", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "Intro (KOD)" }
+        "sampled": { "artist": "J. Cole", "title": "Intro (KOD)", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ahmad Jamal", "title": "I'll Never Stop Loving You", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "ATM" }
+        "sampled": { "artist": "J. Cole", "title": "ATM", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Roy Ayers", "title": "Running Away", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "Motiv8" }
+        "sampled": { "artist": "J. Cole", "title": "Motiv8", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Monica", "title": "Why I Love You So Much", "genre": "R&B" },
-        "sampled": { "artist": "J. Cole", "title": "Wet Dreamz" }
+        "sampled": { "artist": "J. Cole", "title": "Wet Dreamz", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Five Stairsteps", "title": "Danger! She's a Stranger", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Fire Squad" }
+        "sampled": { "artist": "J. Cole", "title": "Fire Squad", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Jay-Z", "title": "Public Service Announcement", "genre": "Hip-Hop" },
-        "sampled": { "artist": "J. Cole", "title": "A Tale of 2 Citiez" }
+        "sampled": { "artist": "J. Cole", "title": "A Tale of 2 Citiez", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Donnie Hathaway", "title": "I Love the Lord", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Love Yourz" }
+        "sampled": { "artist": "J. Cole", "title": "Love Yourz", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Richard Clayderman", "title": "Concerto Pour Une Jeune Fille Nommee Je T'Aime", "genre": "Pop" },
-        "sampled": { "artist": "J. Cole", "title": "Apparently" }
+        "sampled": { "artist": "J. Cole", "title": "Apparently", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Jodeci", "title": "Come Talk To Me", "genre": "R&B" },
-        "sampled": { "artist": "J. Cole", "title": "Can't Get Enough" }
+        "sampled": { "artist": "J. Cole", "title": "Can't Get Enough", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Whitney Houston", "title": "I Have Nothing", "genre": "Pop" },
-        "sampled": { "artist": "Drake", "title": "Tuscan Leather" }
+        "sampled": { "artist": "Drake", "title": "Tuscan Leather", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Wu-Tang Clan", "title": "It's Yourz", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "Own It" }
+        "sampled": { "artist": "Drake", "title": "Own It", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Timmy Thomas", "title": "Why Can't We Live Together", "genre": "Soul" },
-        "sampled": { "artist": "Drake", "title": "Hotline Bling" }
+        "sampled": { "artist": "Drake", "title": "Hotline Bling", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Lauryn Hill", "title": "Ex-Factor", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Nice for What" }
+        "sampled": { "artist": "Drake", "title": "Nice for What", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Brook Benton", "title": "You Were Gone", "genre": "Soul" },
-        "sampled": { "artist": "Drake", "title": "Jimmy Cooks feat. 21 Savage" }
+        "sampled": { "artist": "Drake", "title": "Jimmy Cooks feat. 21 Savage", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ginuwine", "title": "So Anxious", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Legend" }
+        "sampled": { "artist": "Drake", "title": "Legend", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Jodeci", "title": "4 U", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Jodeci Freestyle" }
+        "sampled": { "artist": "Drake", "title": "Jodeci Freestyle", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Malcolm McLaren", "title": "World's Famous", "genre": "Electronic" },
-        "sampled": { "artist": "Drake", "title": "Feel No Ways" }
+        "sampled": { "artist": "Drake", "title": "Feel No Ways", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Mary J. Blige", "title": "Mary's Joint", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Weston Road Flows" }
+        "sampled": { "artist": "Drake", "title": "Weston Road Flows", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "DJ Paleface", "title": "Do You Mind (Crazy Cousins Remix) feat. Kyla", "genre": "Electronic" },
-        "sampled": { "artist": "Drake", "title": "One Dance" }
+        "sampled": { "artist": "Drake", "title": "One Dance", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ray J", "title": "One Wish", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Redemption" }
+        "sampled": { "artist": "Drake", "title": "Redemption", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Brandy", "title": "I Dedicate, Pt. 2", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Fire & Desire" }
+        "sampled": { "artist": "Drake", "title": "Fire & Desire", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Hiatus Kaiyote", "title": "Building a Ladder", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Free Smoke" }
+        "sampled": { "artist": "Drake", "title": "Free Smoke", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Soul Searchers", "title": "Ashley's Roachclip", "genre": "Funk" },
-        "sampled": { "artist": "Drake", "title": "Take Care" }
+        "sampled": { "artist": "Drake", "title": "Take Care", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "X-Clan", "title": "Heed the Word of the Brother", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "Worst Behavior" }
+        "sampled": { "artist": "Drake", "title": "Worst Behavior", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Busta Rhymes", "title": "Put Your Hands Where My Eyes Can See", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "Headlines" }
+        "sampled": { "artist": "Drake", "title": "Headlines", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Junior Mafia", "title": "Get Money", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "Started From The Bottom" }
+        "sampled": { "artist": "Drake", "title": "Started From The Bottom", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Donny Hathaway", "title": "Jealous Guy", "genre": "Soul" },
-        "sampled": { "artist": "Drake", "title": "Practice" }
+        "sampled": { "artist": "Drake", "title": "Practice", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Whatnauts", "title": "I'll Erase Away Your Pain", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Fade" }
+        "sampled": { "artist": "Kanye West", "title": "Fade", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Temprees", "title": "If I Could Say What I Want To Say", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "No Role Modelz" }
+        "sampled": { "artist": "J. Cole", "title": "No Role Modelz", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Hubert Laws", "title": "No More", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "Power Trip" }
+        "sampled": { "artist": "J. Cole", "title": "Power Trip", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Sister Nancy", "title": "Bam Bam", "genre": "Reggae" },
-        "sampled": { "artist": "Kanye West", "title": "Famous" }
+        "sampled": { "artist": "Kanye West", "title": "Famous", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Willie Hutch", "title": "Mack Man", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "The New Workout Plan" }
+        "sampled": { "artist": "Kanye West", "title": "The New Workout Plan", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Fats Waller", "title": "The Minor Drag", "genre": "Jazz" },
-        "sampled": { "artist": "Kanye West", "title": "Good Morning" }
+        "sampled": { "artist": "Kanye West", "title": "Good Morning", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Edwin Birdsong", "title": "Cola Bottle Baby", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Stronger" }
+        "sampled": { "artist": "Kanye West", "title": "Stronger", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Aretha Franklin", "title": "All the Way Live", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Last Call" }
+        "sampled": { "artist": "Kanye West", "title": "Last Call", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Mavado feat. Serani", "title": "Dying", "genre": "Reggae" },
-        "sampled": { "artist": "Drake", "title": "9" }
+        "sampled": { "artist": "Drake", "title": "9", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Dramatics", "title": "In the Rain", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Chaining Day" }
+        "sampled": { "artist": "J. Cole", "title": "Chaining Day", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Beenie Man", "title": "Tear Off Mi Garment", "genre": "Reggae" },
-        "sampled": { "artist": "Drake", "title": "Controlla" }
+        "sampled": { "artist": "Drake", "title": "Controlla", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Eddie Floyd", "title": "I've Never Found a Girl (To Love Me Like You Do)", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Runaway" }
+        "sampled": { "artist": "Kanye West", "title": "Runaway", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Kashif", "title": "I Just Got to Have You (Lover Turn Me Loose)", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Hold On, We're Going Home" }
+        "sampled": { "artist": "Drake", "title": "Hold On, We're Going Home", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Marlena Shaw", "title": "Woman of the Ghetto", "genre": "Jazz" },
-        "sampled": { "artist": "Kanye West", "title": "My Beautiful Dark Twisted Fantasy (Title Track)" }
+        "sampled": { "artist": "Kanye West", "title": "My Beautiful Dark Twisted Fantasy (Title Track)", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Interpol", "title": "Pioneer to the Falls", "genre": "Rock" },
-        "sampled": { "artist": "Drake", "title": "Pound Cake / Paris Morton Music 2" }
+        "sampled": { "artist": "Drake", "title": "Pound Cake / Paris Morton Music 2", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The O'Jays", "title": "We're Still Together", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "In the Morning" }
+        "sampled": { "artist": "J. Cole", "title": "In the Morning", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Whatnauts", "title": "Message from a Black Man", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Never Let Me Down" }
+        "sampled": { "artist": "Kanye West", "title": "Never Let Me Down", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Alicia Keys", "title": "You Don't Know My Name", "genre": "R&B" },
-        "sampled": { "artist": "Kanye West", "title": "You Don't Know My Name (Remix)" }
+        "sampled": { "artist": "Kanye West", "title": "You Don't Know My Name (Remix)", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Nina Simone", "title": "Strange Fruit", "genre": "Jazz" },
-        "sampled": { "artist": "Kanye West", "title": "Blood on the Leaves" }
+        "sampled": { "artist": "Kanye West", "title": "Blood on the Leaves", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Gino Vannelli", "title": "I Just Wanna Stop", "genre": "Pop" },
-        "sampled": { "artist": "Drake", "title": "In My Feelings" }
+        "sampled": { "artist": "Drake", "title": "In My Feelings", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Emotions", "title": "Blind Alley", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Hey Mama" }
+        "sampled": { "artist": "Kanye West", "title": "Hey Mama", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Sly and the Family Stone", "title": "You Can Make It If You Try", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Heard 'Em Say" }
+        "sampled": { "artist": "Kanye West", "title": "Heard 'Em Say", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Earth, Wind & Fire", "title": "Devotion", "genre": "Funk" },
-        "sampled": { "artist": "J. Cole", "title": "Power Trip" }
+        "sampled": { "artist": "J. Cole", "title": "Power Trip", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Delfonics", "title": "La La Means I Love You", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "In the Morning" }
+        "sampled": { "artist": "J. Cole", "title": "In the Morning", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Hamilton, Joe Frank & Reynolds", "title": "Fallin' in Love", "genre": "Pop" },
-        "sampled": { "artist": "Drake", "title": "Take Care" }
+        "sampled": { "artist": "Drake", "title": "Take Care", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Aretha Franklin", "title": "Until I Found The Lord", "genre": "Soul" },
-        "sampled": { "artist": "Drake", "title": "Unforgettable" }
+        "sampled": { "artist": "Drake", "title": "Unforgettable", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Wu-Tang Clan", "title": "Tearz", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Kanye West", "title": "Gorgeous" }
+        "sampled": { "artist": "Kanye West", "title": "Gorgeous", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The S.O.S Band", "title": "Borrowed Love", "genre": "Funk" },
-        "sampled": { "artist": "J. Cole", "title": "A Tale of 2 Citiez" }
+        "sampled": { "artist": "J. Cole", "title": "A Tale of 2 Citiez", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Cold Grits", "title": "It's Your Thing", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Fade" }
+        "sampled": { "artist": "Kanye West", "title": "Fade", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Etta James", "title": "Something's Got a Hold on Me", "genre": "Soul" },
-        "sampled": { "artist": "Avicii", "title": "Levels" }
+        "sampled": { "artist": "Avicii", "title": "Levels", "genre": "Electronic" }
     },
     {
         "sample": { "artist": "Stevie Wonder", "title": "All Day Sucker", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "So Appalled" }
+        "sampled": { "artist": "Kanye West", "title": "So Appalled", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Minnie Riperton", "title": "Inside My Love", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Sparks Will Fly" }
+        "sampled": { "artist": "J. Cole", "title": "Sparks Will Fly", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Isley Brothers", "title": "Between the Sheets", "genre": "Funk" },
-        "sampled": { "artist": "Drake", "title": "Ignant Shit" }
+        "sampled": { "artist": "Drake", "title": "Ignant Shit", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Don Covay", "title": "Everything Gonna Be Alright", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "The Workout" }
+        "sampled": { "artist": "J. Cole", "title": "The Workout", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "E.U.", "title": "Doin' the Butt", "genre": "Funk" },
-        "sampled": { "artist": "J. Cole", "title": "G.O.M.D." }
+        "sampled": { "artist": "J. Cole", "title": "G.O.M.D.", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Billy Joel", "title": "Moving Out (Anthony's Song)", "genre": "Rock" },
-        "sampled": { "artist": "Drake", "title": "Say What's Real" }
+        "sampled": { "artist": "Drake", "title": "Say What's Real", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Fela Kuti", "title": "Gentleman", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Power" }
+        "sampled": { "artist": "Kanye West", "title": "Power", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "O.V. Wright", "title": "A Nickel and a Nail", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Fire Squad" }
+        "sampled": { "artist": "J. Cole", "title": "Fire Squad", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Korgis", "title": "Everybody's Got to Learn Sometime", "genre": "Pop" },
-        "sampled": { "artist": "Beck", "title": "Everybody's Got to Learn Sometime" }
+        "sampled": { "artist": "Beck", "title": "Everybody's Got to Learn Sometime", "genre": "Alternative" }
     },
     {
         "sample": { "artist": "The Delfonics", "title": "Ready or Not Here I Come", "genre": "Soul" },
-        "sampled": { "artist": "The Fugees", "title": "Ready or Not" }
+        "sampled": { "artist": "The Fugees", "title": "Ready or Not", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Bob James", "title": "Nautilus", "genre": "Jazz" },
-        "sampled": { "artist": "A Tribe Called Quest", "title": "Clap Your Hands" }
+        "sampled": { "artist": "A Tribe Called Quest", "title": "Clap Your Hands", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ike and Tina Turner", "title": "Cussin', Cryin' and Carryin' On", "genre": "Soul" },
-        "sampled": { "artist": "Salt-N-Pepa", "title": "Push It" }
+        "sampled": { "artist": "Salt-N-Pepa", "title": "Push It", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Curtis Mayfield", "title": "(Don't Worry) If There's a Hell Below, We're All Going to Go", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Jesus Walks" }
+        "sampled": { "artist": "Kanye West", "title": "Jesus Walks", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Aretha Franklin", "title": "Spirit in the Dark", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "School Spirit" }
+        "sampled": { "artist": "Kanye West", "title": "School Spirit", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Mandrill", "title": "Peace and Love (Amani Na Mapenzi): Movement IV", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Two Words" }
+        "sampled": { "artist": "Kanye West", "title": "Two Words", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Bill Withers", "title": "Just Out of Reach", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Drive Slow" }
+        "sampled": { "artist": "Kanye West", "title": "Drive Slow", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Gil Scott-Heron", "title": "Comment #1", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Who Will Survive in America" }
+        "sampled": { "artist": "Kanye West", "title": "Who Will Survive in America", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Dells", "title": "Fonky Thang, Diamon Rang", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Family Business" }
+        "sampled": { "artist": "Kanye West", "title": "Family Business", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Erykah Badu", "title": "Didn't Cha Know?", "genre": "R&B" },
-        "sampled": { "artist": "J. Cole", "title": "Too Deep for the Intro" }
+        "sampled": { "artist": "J. Cole", "title": "Too Deep for the Intro", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Dexter Wansel", "title": "Theme From the Planets", "genre": "Funk" },
-        "sampled": { "artist": "J. Cole", "title": "Lights Please" }
+        "sampled": { "artist": "J. Cole", "title": "Lights Please", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Supremes", "title": "My World Is Empty Without You", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "World Is Empty" }
+        "sampled": { "artist": "J. Cole", "title": "World Is Empty", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Hank Crawford", "title": "Wildflower", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole ft. Brandon Hines", "title": "Dreams" }
+        "sampled": { "artist": "J. Cole ft. Brandon Hines", "title": "Dreams", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Billy Stewart", "title": "Cross My Heart", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Get Away" }
+        "sampled": { "artist": "J. Cole", "title": "Get Away", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Lee Fields & The Expressions", "title": "Ladies", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Ladies" }
+        "sampled": { "artist": "J. Cole", "title": "Ladies", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Sara Tavares", "title": "Balance", "genre": "Pop" },
-        "sampled": { "artist": "J. Cole", "title": "Losing My Balance" }
+        "sampled": { "artist": "J. Cole", "title": "Losing My Balance", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Janelle Mon\u00e1e", "title": "Neon Valley Street", "genre": "R&B" },
-        "sampled": { "artist": "J. Cole ft. Wale", "title": "You Got It" }
+        "sampled": { "artist": "J. Cole ft. Wale", "title": "You Got It", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Focus", "title": "Hocus Pocus", "genre": "Rock" },
-        "sampled": { "artist": "J. Cole", "title": "Blow Up" }
+        "sampled": { "artist": "J. Cole", "title": "Blow Up", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Class-Set", "title": "Julie", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "The Autograph" }
+        "sampled": { "artist": "J. Cole", "title": "The Autograph", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Billie Holiday", "title": "My Man", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "Cost Me a Lot" }
+        "sampled": { "artist": "J. Cole", "title": "Cost Me a Lot", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Stevie Wonder", "title": "My Cherie Amour", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Love Me Not" }
+        "sampled": { "artist": "J. Cole", "title": "Love Me Not", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "OutKast", "title": "So Fresh, So Clean", "genre": "Hip-Hop" },
-        "sampled": { "artist": "J. Cole", "title": "Farewell" }
+        "sampled": { "artist": "J. Cole", "title": "Farewell", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Kenny Burrell", "title": "All Mine (Minha)", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "Photograph" }
+        "sampled": { "artist": "J. Cole", "title": "Photograph", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Bill Withers", "title": "Kissing My Love", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "The Cut Off" }
+        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "The Cut Off", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Takehiro Honda", "title": "Dark & Mellow", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "The Cut Off" }
+        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "The Cut Off", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Winans", "title": "The Question", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Foldin Clothes" }
+        "sampled": { "artist": "J. Cole", "title": "Foldin Clothes", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Marlena Shaw", "title": "California Soul", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "Ville Mentality" }
+        "sampled": { "artist": "J. Cole", "title": "Ville Mentality", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Marvin Gaye", "title": "All the Way Round", "genre": "Soul" },
-        "sampled": { "artist": "Drake", "title": "8 out of 10" }
+        "sampled": { "artist": "Drake", "title": "8 out of 10", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ideal", "title": "Get Gone", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Faithful" }
+        "sampled": { "artist": "Drake", "title": "Faithful", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "SWV (Sisters With Voices)", "title": "Anything", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Shot for Me" }
+        "sampled": { "artist": "Drake", "title": "Shot for Me", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Mariah Carey", "title": "Emotions (club remix)", "genre": "Pop" },
-        "sampled": { "artist": "Drake", "title": "Emotionless" }
+        "sampled": { "artist": "Drake", "title": "Emotionless", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "DMX", "title": "What These Bitches Want", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "U With Me?" }
+        "sampled": { "artist": "Drake", "title": "U With Me?", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "DMX", "title": "How's It Goin' Down", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "U With Me?" }
+        "sampled": { "artist": "Drake", "title": "U With Me?", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Aaliyah featuring R. Kelly", "title": "At Your Best (You Are Love)", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Unforgettable" }
+        "sampled": { "artist": "Drake", "title": "Unforgettable", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Juvenile", "title": "Back That Azz Up", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "Practice" }
+        "sampled": { "artist": "Drake", "title": "Practice", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Winans", "title": "The Question", "genre": "Soul" },
-        "sampled": { "artist": "Drake", "title": "Views" }
+        "sampled": { "artist": "Drake", "title": "Views", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Witch", "title": "Introduction", "genre": "Rock" },
-        "sampled": { "artist": "Drake", "title": "Gord's Room" }
+        "sampled": { "artist": "Drake", "title": "Gord's Room", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Sade", "title": "Closer", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Why Even Try" }
+        "sampled": { "artist": "Drake", "title": "Why Even Try", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Jai Paul", "title": "BTSTU (Demo)", "genre": "Electronic" },
-        "sampled": { "artist": "Drake", "title": "Dreams Money Can Buy" }
+        "sampled": { "artist": "Drake", "title": "Dreams Money Can Buy", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Joe Pass", "title": "A Time for Us", "genre": "Jazz" },
-        "sampled": { "artist": "Drake", "title": "Look What You've Done" }
+        "sampled": { "artist": "Drake", "title": "Look What You've Done", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Wu-Tang Clan", "title": "C.R.E.A.M.", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "Can I" }
+        "sampled": { "artist": "Drake", "title": "Can I", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "9th Wonder", "title": "The Last Time", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Drake", "title": "The Resistance" }
+        "sampled": { "artist": "Drake", "title": "The Resistance", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Jon B.", "title": "Calling on You", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "Cameras / Good Ones Go Interlude" }
+        "sampled": { "artist": "Drake", "title": "Cameras / Good Ones Go Interlude", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Wally Wilder", "title": "Don't Tell a Lie About Me", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Crack Music" }
+        "sampled": { "artist": "Kanye West", "title": "Crack Music", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "George Duke", "title": "I Love You More", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "03' Adolescence" }
+        "sampled": { "artist": "J. Cole", "title": "03' Adolescence", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Dramatics", "title": "Toast to the Fool", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Two Words" }
+        "sampled": { "artist": "Kanye West", "title": "Two Words", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Common", "title": "The Light", "genre": "Hip-Hop" },
-        "sampled": { "artist": "J. Cole", "title": "Return of the King" }
+        "sampled": { "artist": "J. Cole", "title": "Return of the King", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ideal", "title": "Get Gone", "genre": "R&B" },
-        "sampled": { "artist": "Drake", "title": "9" }
+        "sampled": { "artist": "Drake", "title": "9", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Baby Washington", "title": "This Time", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Last Call" }
+        "sampled": { "artist": "Kanye West", "title": "Last Call", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Turtles", "title": "You Showed Me", "genre": "Rock" },
-        "sampled": { "artist": "J. Cole", "title": "Before I'm Gone" }
+        "sampled": { "artist": "J. Cole", "title": "Before I'm Gone", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Dramatics", "title": "I Dedicate My Life to You", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West", "title": "Family Business" }
+        "sampled": { "artist": "Kanye West", "title": "Family Business", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Temptations", "title": "I Wish It Would Rain", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Intro" }
+        "sampled": { "artist": "J. Cole", "title": "Intro", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Dennis Coffey", "title": "Ride Sally Ride", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Last Call" }
+        "sampled": { "artist": "Kanye West", "title": "Last Call", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Stylistics", "title": "You Are Everything", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "Rise and Shine" }
+        "sampled": { "artist": "J. Cole", "title": "Rise and Shine", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Doors", "title": "Five to One", "genre": "Rock" },
-        "sampled": { "artist": "Kanye West", "title": "The New Workout Plan" }
+        "sampled": { "artist": "Kanye West", "title": "The New Workout Plan", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Kool & The Gang", "title": "N.T.", "genre": "Funk" },
-        "sampled": { "artist": "Drake", "title": "Know Yourself" }
+        "sampled": { "artist": "Drake", "title": "Know Yourself", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Gino Washington", "title": "Gino Is a Coward", "genre": "Soul" },
-        "sampled": { "artist": "J. Cole", "title": "January 28th" }
+        "sampled": { "artist": "J. Cole", "title": "January 28th", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Micha\u0142 Urbaniak", "title": "The End of Summer", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole", "title": "Once an Addict (Interlude)" }
+        "sampled": { "artist": "J. Cole", "title": "Once an Addict (Interlude)", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "John Dankworth", "title": "Wife", "genre": "Jazz" },
-        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "Friends" }
+        "sampled": { "artist": "J. Cole ft. kiLL Edward", "title": "Friends", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Impressions", "title": "We're a Winner", "genre": "Soul" },
-        "sampled": { "artist": "Kanye West feat. Common", "title": "Southside" }
+        "sampled": { "artist": "Kanye West feat. Common", "title": "Southside", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Undisputed Truth", "title": "Gonna Fly Now", "genre": "Funk" },
-        "sampled": { "artist": "Kanye West", "title": "Good Morning" }
+        "sampled": { "artist": "Kanye West", "title": "Good Morning", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Mtume", "title": "Juicy Fruit", "genre": "Funk" },
-        "sampled": { "artist": "The Notorious B.I.G.", "title": "Juicy" }
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Juicy", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Diana Ross", "title": "I'm Coming Out", "genre": "Pop" },
-        "sampled": { "artist": "The Notorious B.I.G.", "title": "Mo Money Mo Problems" }
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Mo Money Mo Problems", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Isley Brothers", "title": "Between the Sheets", "genre": "Funk" },
-        "sampled": { "artist": "The Notorious B.I.G.", "title": "Big Poppa" }
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Big Poppa", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Bobby Caldwell", "title": "What You Won't Do for Love", "genre": "R&B" },
-        "sampled": { "artist": "2Pac", "title": "Do for Love" }
+        "sampled": { "artist": "2Pac", "title": "Do for Love", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Roger Troutman", "title": "So Ruff, So Tuff", "genre": "Funk" },
-        "sampled": { "artist": "2Pac", "title": "California Love" }
+        "sampled": { "artist": "2Pac", "title": "California Love", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "DeBarge", "title": "A Dream", "genre": "R&B" },
-        "sampled": { "artist": "2Pac", "title": "I Ain't Mad at Cha" }
+        "sampled": { "artist": "2Pac", "title": "I Ain't Mad at Cha", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "James Brown", "title": "Funky Drummer", "genre": "Funk" },
-        "sampled": { "artist": "Public Enemy", "title": "Fight the Power" }
+        "sampled": { "artist": "Public Enemy", "title": "Fight the Power", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Led Zeppelin", "title": "When the Levee Breaks", "genre": "Rock" },
-        "sampled": { "artist": "Beastie Boys", "title": "Rhymin & Stealin" }
+        "sampled": { "artist": "Beastie Boys", "title": "Rhymin & Stealin", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Isley Brothers", "title": "That Lady", "genre": "Funk" },
-        "sampled": { "artist": "Kendrick Lamar", "title": "i" }
+        "sampled": { "artist": "Kendrick Lamar", "title": "i", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "James Brown", "title": "The Payback", "genre": "Funk" },
-        "sampled": { "artist": "Kendrick Lamar", "title": "King Kunta" }
+        "sampled": { "artist": "Kendrick Lamar", "title": "King Kunta", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Janet Jackson", "title": "Any Time, Any Place", "genre": "Pop" },
-        "sampled": { "artist": "Kendrick Lamar", "title": "Poetic Justice" }
+        "sampled": { "artist": "Kendrick Lamar", "title": "Poetic Justice", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Beach House", "title": "Silver Soul", "genre": "Rock" },
-        "sampled": { "artist": "Kendrick Lamar", "title": "Money Trees" }
+        "sampled": { "artist": "Kendrick Lamar", "title": "Money Trees", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Lou Reed", "title": "Walk on the Wild Side", "genre": "Rock" },
-        "sampled": { "artist": "A Tribe Called Quest", "title": "Can I Kick It?" }
+        "sampled": { "artist": "A Tribe Called Quest", "title": "Can I Kick It?", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Lyn Collins", "title": "Think (About It)", "genre": "Funk" },
-        "sampled": { "artist": "Rob Base & DJ E-Z Rock", "title": "It Takes Two" }
+        "sampled": { "artist": "Rob Base & DJ E-Z Rock", "title": "It Takes Two", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Rick James", "title": "Super Freak", "genre": "Funk" },
-        "sampled": { "artist": "MC Hammer", "title": "U Can't Touch This" }
+        "sampled": { "artist": "MC Hammer", "title": "U Can't Touch This", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Ahmad Jamal", "title": "Swahililand", "genre": "Jazz" },
-        "sampled": { "artist": "Nas", "title": "The World Is Yours" }
+        "sampled": { "artist": "Nas", "title": "The World Is Yours", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Michael Jackson", "title": "Human Nature", "genre": "Pop" },
-        "sampled": { "artist": "Nas", "title": "It Ain't Hard to Tell" }
+        "sampled": { "artist": "Nas", "title": "It Ain't Hard to Tell", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "The Incredible Bongo Band", "title": "Apache", "genre": "Funk" },
-        "sampled": { "artist": "Nas", "title": "Made You Look" }
+        "sampled": { "artist": "Nas", "title": "Made You Look", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Willie Hutch", "title": "I Choose You", "genre": "Funk" },
-        "sampled": { "artist": "UGK feat. OutKast", "title": "Int'l Players Anthem" }
+        "sampled": { "artist": "UGK feat. OutKast", "title": "Int'l Players Anthem", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Isaac Hayes", "title": "Hyperbolicsyllabicsesquedalymistic", "genre": "Soul" },
-        "sampled": { "artist": "Public Enemy", "title": "Black Steel in the Hour of Chaos" }
+        "sampled": { "artist": "Public Enemy", "title": "Black Steel in the Hour of Chaos", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Herbie Hancock", "title": "Watermelon Man", "genre": "Jazz" },
-        "sampled": { "artist": "Us3", "title": "Cantaloop (Flip Fantasia)" }
+        "sampled": { "artist": "Us3", "title": "Cantaloop (Flip Fantasia)", "genre": "Jazz" }
     },
     {
         "sample": { "artist": "Bob James", "title": "Take Me to the Mardi Gras", "genre": "Jazz" },
-        "sampled": { "artist": "Run-DMC", "title": "Peter Piper" }
+        "sampled": { "artist": "Run-DMC", "title": "Peter Piper", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Tom Tom Club", "title": "Genius of Love", "genre": "Pop" },
-        "sampled": { "artist": "Mariah Carey", "title": "Fantasy" }
+        "sampled": { "artist": "Mariah Carey", "title": "Fantasy", "genre": "Pop" }
     },
     {
         "sample": { "artist": "Slick Rick", "title": "Children's Story", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Snoop Dogg", "title": "Lodi Dodi" }
+        "sampled": { "artist": "Snoop Dogg", "title": "Lodi Dodi", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Schoolly D", "title": "P.S.K. What Does It Mean?", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Ice-T", "title": "6 'N the Mornin'" }
+        "sampled": { "artist": "Ice-T", "title": "6 'N the Mornin'", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Parliament", "title": "Give Up the Funk", "genre": "Funk" },
-        "sampled": { "artist": "Digital Underground", "title": "The Humpty Dance" }
+        "sampled": { "artist": "Digital Underground", "title": "The Humpty Dance", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Kool & The Gang", "title": "Summer Madness", "genre": "Funk" },
-        "sampled": { "artist": "DJ Jazzy Jeff & The Fresh Prince", "title": "Summertime" }
+        "sampled": { "artist": "DJ Jazzy Jeff & The Fresh Prince", "title": "Summertime", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Stevie Wonder", "title": "Pastime Paradise", "genre": "Soul" },
-        "sampled": { "artist": "Coolio", "title": "Gangsta's Paradise" }
+        "sampled": { "artist": "Coolio", "title": "Gangsta's Paradise", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Grandmaster Flash and the Furious Five", "title": "The Message", "genre": "Hip-Hop" },
-        "sampled": { "artist": "Diddy", "title": "Can't Nobody Hold Me Down" }
+        "sampled": { "artist": "Diddy", "title": "Can't Nobody Hold Me Down", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Curtis Mayfield", "title": "Pusherman", "genre": "Soul" },
-        "sampled": { "artist": "Ice Cube", "title": "Pushin' Weight" }
+        "sampled": { "artist": "Ice Cube", "title": "Pushin' Weight", "genre": "Hip-Hop" }
     },
     {
         "sample": { "artist": "Average White Band", "title": "School Boy Crush", "genre": "Funk" },
-        "sampled": { "artist": "Missy Elliott", "title": "Sock It 2 Me" }
+        "sampled": { "artist": "Missy Elliott", "title": "Sock It 2 Me", "genre": "Hip-Hop" }
     }
 ]

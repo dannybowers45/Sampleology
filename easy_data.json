@@ -1,0 +1,90 @@
+[
+    {
+        "sample": { "artist": "Daft Punk", "title": "Harder, Better, Faster, Stronger", "genre": "Electronic" },
+        "sampled": { "artist": "Kanye West", "title": "Stronger", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Ray Charles", "title": "I Got a Woman", "genre": "Soul" },
+        "sampled": { "artist": "Kanye West", "title": "Gold Digger feat. Jamie Foxx", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Otis Redding", "title": "Try a Little Tenderness", "genre": "Soul" },
+        "sampled": { "artist": "Kanye West & Jay-Z", "title": "Otis", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Chaka Khan", "title": "Through the Fire", "genre": "R&B" },
+        "sampled": { "artist": "Kanye West", "title": "Through the Wire", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Nina Simone", "title": "Strange Fruit", "genre": "Jazz" },
+        "sampled": { "artist": "Kanye West", "title": "Blood on the Leaves", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Curtis Mayfield", "title": "(Don't Worry) If There's a Hell Below, We're All Going to Go", "genre": "Soul" },
+        "sampled": { "artist": "Kanye West", "title": "Jesus Walks", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Fela Kuti", "title": "Gentleman", "genre": "Funk" },
+        "sampled": { "artist": "Kanye West", "title": "Power", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Timmy Thomas", "title": "Why Can't We Live Together", "genre": "Soul" },
+        "sampled": { "artist": "Drake", "title": "Hotline Bling", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Lauryn Hill", "title": "Ex-Factor", "genre": "R&B" },
+        "sampled": { "artist": "Drake", "title": "Nice for What", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Etta James", "title": "Something's Got a Hold on Me", "genre": "Soul" },
+        "sampled": { "artist": "Avicii", "title": "Levels", "genre": "Electronic" }
+    },
+    {
+        "sample": { "artist": "Stevie Wonder", "title": "Pastime Paradise", "genre": "Soul" },
+        "sampled": { "artist": "Coolio", "title": "Gangsta's Paradise", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Lou Reed", "title": "Walk on the Wild Side", "genre": "Rock" },
+        "sampled": { "artist": "A Tribe Called Quest", "title": "Can I Kick It?", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Rick James", "title": "Super Freak", "genre": "Funk" },
+        "sampled": { "artist": "MC Hammer", "title": "U Can't Touch This", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Mtume", "title": "Juicy Fruit", "genre": "Funk" },
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Juicy", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Diana Ross", "title": "I'm Coming Out", "genre": "Pop" },
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Mo Money Mo Problems", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "The Isley Brothers", "title": "Between the Sheets", "genre": "Funk" },
+        "sampled": { "artist": "The Notorious B.I.G.", "title": "Big Poppa", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Roger Troutman", "title": "So Ruff, So Tuff", "genre": "Funk" },
+        "sampled": { "artist": "2Pac", "title": "California Love", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "James Brown", "title": "Funky Drummer", "genre": "Funk" },
+        "sampled": { "artist": "Public Enemy", "title": "Fight the Power", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "James Brown", "title": "The Payback", "genre": "Funk" },
+        "sampled": { "artist": "Kendrick Lamar", "title": "King Kunta", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Led Zeppelin", "title": "When the Levee Breaks", "genre": "Rock" },
+        "sampled": { "artist": "Beastie Boys", "title": "Rhymin & Stealin", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "Bobby Caldwell", "title": "What You Won't Do for Love", "genre": "R&B" },
+        "sampled": { "artist": "2Pac", "title": "Do for Love", "genre": "Hip-Hop" }
+    },
+    {
+        "sample": { "artist": "The Delfonics", "title": "Ready or Not Here I Come", "genre": "Soul" },
+        "sampled": { "artist": "The Fugees", "title": "Ready or Not", "genre": "Hip-Hop" }
+    }
+]
