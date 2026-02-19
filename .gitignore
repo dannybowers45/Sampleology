@@ -1,1 +1,6 @@
 .vercel
+.DS_Store
+planning.md
+extra.json
+test.json
+samples.json
