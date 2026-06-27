@@ -542,7 +542,7 @@ function showLeaderboardModal(isEndGame = false, gameScore = 0, maxScore = 0, ac
         }
 
         summaryHTML = `
-            <h2 class="text-2xl font-black text-center" style="color: var(--accent);">Game Over!</h2>
+            <h2 class="text-xl font-bold text-center" style="color: var(--text);">Game Over</h2>
             <div class="stat-grid mt-3" style="grid-template-columns: repeat(2, 1fr);">
                 <div class="stat-chip"><span class="stat-label">Final Score</span><span class="stat-value">${fmtScore(gameScore)}/${maxScore}</span></div>
                 <div class="stat-chip"><span class="stat-label">Accuracy</span><span class="stat-value">${accuracy}%</span></div>
@@ -550,14 +550,14 @@ function showLeaderboardModal(isEndGame = false, gameScore = 0, maxScore = 0, ac
                 <div class="stat-chip"><span class="stat-label">Genre</span><span class="stat-value">${selectedGenre === 'all' ? 'All' : selectedGenre}</span></div>
             </div>
             ${missedHTML}
-            <hr style="border-color: rgba(255,255,255,0.06); margin: 16px 0;">
+            <hr style="border-color: var(--border); margin: 16px 0;">
         `;
     }
 
     // Leaderboard rows
     let rowsHTML = '';
     if (lb.length === 0) {
-        rowsHTML = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">No scores yet. Play a game!</p>';
+        rowsHTML = '<p style="color: var(--text-dim); text-align: center; padding: 20px;">No scores yet. Play a game!</p>';
     } else {
         rowsHTML = lb.map((entry, i) => {
             const scoreVal = fmtScore(entry.score);
@@ -580,10 +580,10 @@ function showLeaderboardModal(isEndGame = false, gameScore = 0, maxScore = 0, ac
         <div class="modal-overlay">
             <div class="modal-content anim-fade-in space-y-4">
                 ${summaryHTML}
-                <h3 class="text-xl font-bold text-center" style="color: var(--accent);">${title}</h3>
+                <h3 class="text-lg font-bold text-center" style="color: var(--text);">${title}</h3>
                 <div class="space-y-2">${rowsHTML}</div>
                 <div class="flex flex-col gap-3 mt-4">
-                    <button id="play-again-btn" class="accent-button w-full py-3 px-6">Play Again</button>
+                    <button id="play-again-btn" class="accent-button w-full py-2.5 px-5">Play Again</button>
                     <button id="close-lb-btn" class="ghost-button w-full">Back to Menu</button>
                 </div>
             </div>
